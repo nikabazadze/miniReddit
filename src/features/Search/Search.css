@@ -1,0 +1,32 @@
+.searchBar {
+    height: 3.2rem;
+    display: flex;
+    align-items: center;
+}
+
+.search-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    position: relative;
+    left: 2em;
+}
+
+.searchBar input {
+    font-size: inherit;
+    color: #1f1f1f;
+    width: 500px;
+    height: 2.2rem;
+    padding: 0 7.8%;
+    background-color: #f6f7f8;
+    border: 1px solid #d8d8d8;
+    border-radius: 2rem;
+    outline: none;
+}
+
+.searchBar input:focus {
+    border: 1px solid #026aa7;
+}
+
+.searchBar input::placeholder {
+    font-size: 0.9rem;
+}

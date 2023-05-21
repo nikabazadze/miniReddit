@@ -1,6 +1,7 @@
 import React from "react";
 import './Header.css';
 import logo from './logo.png';
+import Search from '../../features/Search/Search.js'
 
 function Header() {
     return (
@@ -11,7 +12,7 @@ function Header() {
                 </div>
                 <a href="#"><p><span className="highlight">Mini</span>Reddit</p></a>
             </div>
-            <input placeholder="     Search"/>
+            <Search />
         </div>
     )
 }
