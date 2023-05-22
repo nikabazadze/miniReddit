@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 
 import Header from '../components/Header/Header';
+import SubReddits from '../features/SubReddits/SubReddits';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <Header />
       </header>
       <aside>
+        <SubReddits />
       </aside>
       <main>
       </main>

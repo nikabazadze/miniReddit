@@ -1,0 +1,40 @@
+.subreddits {
+    font-family: 'Roboto';
+    background-color: #ffffff;
+    width: 18rem;
+    height: 40rem;
+    margin-top: 1rem;
+}
+
+.subreddits h2 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    padding: 1.2rem;
+    padding-bottom: 0.7rem;
+}
+
+.subreddit {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.5rem 0.9rem;
+    cursor: pointer;
+}
+
+.subreddit:hover {
+    background-color: #0000000f;
+}
+
+.chosenSubreddit,
+.chosenSubreddit:hover {
+    background-color: #8bbdd9;
+}
+
+.subreddit-avatar {
+    width: 1.7rem;
+    height: 1.7rem;
+}
+
+.subreddit p {
+    font-size: 0.8rem;
+}

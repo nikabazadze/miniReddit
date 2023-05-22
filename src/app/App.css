@@ -1,4 +1,5 @@
-html {
+html,
+body {
     font-size: 1rem;
     font-family: 'Roboto', sans-serif;
     color: #1f1f1f;
@@ -6,4 +7,5 @@ html {
 
 body {
     background-color: #e4f0f6;
+    /* background-color: rgb(206, 208, 212); */
 }
