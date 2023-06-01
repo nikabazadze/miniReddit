@@ -3,6 +3,7 @@ import './App.css';
 
 import Header from '../components/Header/Header';
 import SubReddits from '../features/SubReddits/SubReddits';
+import Feed from '../features/Feed/Feed';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <SubReddits />
       </aside>
       <main>
+        <Feed />
       </main>
     </div>
   );
