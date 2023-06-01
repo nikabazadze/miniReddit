@@ -1,50 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import './SubReddits.css';
-import { setChosenSubreddit, selectChosenSubreddit } from "./SubRedditsSlice";
+import { loadSubreddits, setChosenSubreddit, selectSubreddits, selectChosenSubreddit } from "./SubRedditsSlice";
 
-import avatar1 from '../../db/avatar1.svg';
-import avatar2 from '../../db/avatar2.svg';
-import avatar3 from '../../db/avatar3.svg';
+import defaultAvatar from '../../db/avatar1.svg';
 
 function Subreddits() {
+    const subreddits = useSelector(selectSubreddits);
     let chosenSubreddit = useSelector(selectChosenSubreddit);
     const dispatch = useDispatch();
 
-    // mock data for subreddits
-    const subreddits = [
-        {
-            id: 1,
-            icon_img: avatar1,
-            url: 'r/mySubreddit' 
-        },
-        {
-            id: 2,
-            icon_img: avatar2,
-            url: 'r/elonMusk' 
-        },
-        {
-            id: 3,
-            icon_img: avatar3,
-            url: 'r/crypto' 
-        },
-        {
-            id: 4,
-            icon_img: avatar1,
-            url: 'r/gaming' 
-        },
-        {
-            id: 5,
-            icon_img: avatar2,
-            url: 'r/chatgpt' 
-        },
-        {
-            id: 6,
-            icon_img: '',
-            url: 'r/somthingElse' 
-        }
-    ]
+    useEffect(() => {
+        dispatch(loadSubreddits());
+    }, [])
 
     return (
         <div className="subreddits">
@@ -57,11 +26,11 @@ function Subreddits() {
                         onClick={() => dispatch(setChosenSubreddit(subreddit.url))}
                     >
                         <img 
-                            src={subreddit.icon_img || avatar1}
-                            alt={subreddit.url}
+                            src={subreddit.icon_img || defaultAvatar}
+                            alt={subreddit.display_name}
                             className="subreddit-avatar"
                         />
-                        <p>{subreddit.url}</p>
+                        <p>{subreddit.display_name_prefixed}</p>
                     </li>
                 ))}
             </ul>
