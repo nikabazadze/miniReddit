@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import './SubReddits.css';
 import { loadSubreddits, setChosenSubreddit, selectSubreddits, selectChosenSubreddit } from "./SubRedditsSlice";
 
-import defaultAvatar from '../../db/avatar1.svg';
+import defaultAvatar from './avatar.svg';
 
 function Subreddits() {
     const subreddits = useSelector(selectSubreddits);

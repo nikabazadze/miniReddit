@@ -11,12 +11,12 @@ function App() {
       <header>
         <Header />
       </header>
-      <aside>
-        <SubReddits />
-      </aside>
       <main>
         <Feed />
       </main>
+      <aside>
+        <SubReddits />
+      </aside>
     </div>
   );
 }

@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 import './Feed.css';
 import { selectPosts, loadPosts } from "./FeedSlice";
+import Post from "../../components/Post/Post";
 
 function Feed() {
     const posts = useSelector(selectPosts);
@@ -13,8 +14,15 @@ function Feed() {
     }, []);
 
     return (
-        <div>
-
+        <div id="feed">
+            {
+                posts.map((post) => {
+                    return <Post
+                                key={post.id}
+                                post={post}
+                           />
+                })
+            }
         </div>
     )
 }

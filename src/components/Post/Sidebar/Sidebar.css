@@ -1,0 +1,43 @@
+.sideBar {
+    background-color: #f6f7f8;
+    border-radius: 0.25rem 0 0 0.25rem;
+    width: 6%;
+    padding-top: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.45rem;
+    color: #353535;
+}
+
+.vote-icon {
+    font-size: 1.5rem;
+    color: #868686;
+    cursor: pointer;
+}
+
+.upVote:hover {
+    color: green;
+}
+
+.downVote:hover {
+    color: red;
+}
+
+.sideBar span {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: auto;
+}
+
+.bigNum {
+    padding-left: 0.2rem;
+}
+
+.green {
+    color: green;
+}
+
+.red {
+    color: red;
+}
