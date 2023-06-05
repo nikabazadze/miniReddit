@@ -1,0 +1,60 @@
+.post-content {
+    width: 100%;
+    max-height: 35rem;
+    overflow: hidden;
+    margin-top: 1rem;
+}
+
+.post-content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    background-color: #000000;
+}
+
+.post-content video {
+    max-height: 35rem;
+    width: auto;
+    display: block;
+}
+
+.post-content p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    padding: 0 1.6rem 0 0.6rem;
+    color: #353535;
+}
+
+.post-content a {
+    color: #ffce47;
+    font-size: 0.85rem;
+    padding: 0 0.6rem;
+    position: relative;
+    bottom: 0.15rem;
+    text-decoration: none;
+}
+
+.post-content a:visited {
+    color: #026aa7;
+}
+
+.post-content a:hover {
+    text-decoration: underline;
+}
+
+.link-icon {
+    color: #ffce47;
+    font-size: 1rem;
+    position: relative;
+    top: 0.27rem;
+    left: 0.1rem;
+}
+
+.icon-clicked {
+    color: #026aa7;
+}

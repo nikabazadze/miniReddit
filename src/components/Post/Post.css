@@ -2,7 +2,6 @@
     background-color: #ffffff;
     border-radius: 0.25rem;
     width: 100%;
-    min-height: 14rem;
     margin-bottom: 1rem;
     display: flex;
 }
@@ -12,48 +11,31 @@
 
 .content-container {
     width: 94%;
-    padding: 0.6rem;
+    padding: 0.6rem 0 0.5rem 0;
     position: relative;
 }
 
 /* Content header */
-.content-container span {
-    font-size: 0.8rem;
+.content-header {
+    padding: 0 0.6rem;
+}
+
+.content-header span {
+    font-size: 0.73rem;
     color: #535353;
 }
 
-.content-container h2 {
-    font-size: 1.35rem;
+.content-header h2 {
+    font-size: 1.25rem;
+    font-weight: 500;
     color: #353535;
     margin: 0.5em 0;
 }
 
-/* Main content */
-.main-content {
-    width: 100%;
-    max-height: 35rem;
-    overflow: hidden;
-    margin-top: 1rem;
-}
-
-.main-content img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-.main-content p {
-    font-size: 0.95rem;
-    line-height: 1.5;
-    padding-right: 1rem;
-    color: #353535;
-}
-
 /* Content footer */
 .content-footer {
-    border-top: 1px solid #d8d8d8;
-    margin-top: 0.5rem;
-    padding: 0.4rem 0.2rem 0 0;
+    margin-top: 0.6rem;
+    padding: 0rem 0.8rem 0 0.6rem;
     display: flex;
     justify-content: space-between;
 }
@@ -72,6 +54,7 @@
 
 .footer-icon-container span {
     font-size: 0.75rem;
-    font-weight: 600;
+    font-weight: 700;
     word-spacing: -0.07rem;
+    color: #868686;
 }

@@ -37,10 +37,9 @@
 .subreddit-avatar {
     width: 1.7rem;
     height: 1.7rem;
-    border: 2px solid #026aa7;
     border-radius: 50%;
 }
 
 .subreddit p {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
 }

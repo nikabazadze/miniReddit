@@ -7,7 +7,7 @@ export const getSubreddits = async () => {
 }
 
 export const getSubredditPosts = async (subredditUrl, thunkAPI) => {
-    const response = await fetch(`${API_ROOT}${subredditUrl}`);
+    const response = await fetch(`${API_ROOT}${subredditUrl}.json`);
     const json = await response.json();
     return json.data.children.map((post) => post.data);
 }

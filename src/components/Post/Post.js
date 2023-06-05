@@ -3,13 +3,12 @@ import moment from 'moment';
 import { BiMessage, BiHide } from "react-icons/bi";
 
 import './Post.css';
-import Sidebar from "./Sidebar/Sidebar";
 import { shortNumber } from "../../utils/shortNumber";
+import Sidebar from "./Sidebar/Sidebar";
+import Content from "./Content/Content";
 
-function Post(props) {
-    const { post } = props;
+function Post({post}) {
     const time = moment.unix(post.created_utc).fromNow();
-    const content = (post.thumbnail === "self") ? <p>{post.selftext}</p> : <img src={post.thumbnail} alt="post's media contnet"/>;
 
     function handleHideClick({target}) {
         const element = target.parentElement.parentElement.parentElement.parentElement;
@@ -24,9 +23,7 @@ function Post(props) {
                     <span>{`Posted by u/${post.author} ${time}`}</span>
                     <h2>{post.title}</h2>
                 </div>
-                <div className="main-content">
-                    {content}
-                </div>
+                <Content post={post} />
                 <div className="content-footer">
                     <div className="footer-icon-container">
                         <BiMessage className="footer-icon" />

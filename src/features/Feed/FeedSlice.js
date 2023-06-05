@@ -1,9 +1,9 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { getPosts } from "../../db/postsDb"; // temporary for DEV
+import { getSubredditPosts } from "../../API/redditAPI";
 
 export const loadPosts = createAsyncThunk(
     'feed/loadPosts',
-    getPosts
+    getSubredditPosts
 );
 
 export const feedSlice = createSlice({

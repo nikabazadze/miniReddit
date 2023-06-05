@@ -10,7 +10,7 @@ export const subredditsSlice = createSlice({
     name: "subreddits",
     initialState: {
         subreddits: [],
-        chosenSubreddit: "",
+        chosenSubreddit: "/r/popular/",
         isLoading: false,
         hasError: false
     },
