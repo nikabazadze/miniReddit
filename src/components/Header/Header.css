@@ -16,11 +16,7 @@
     align-items: center;
     position: absolute;
     left: 1rem;
-}
-
-.logo-container a {
-    text-decoration: none;
-    color: inherit;
+    cursor: pointer;
 }
 
 .logo-container p {

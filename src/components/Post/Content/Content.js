@@ -10,7 +10,7 @@ function Content({post}) {
     let content;
 
     if (post.is_self) {
-        content = <p>{post.selftext}</p>;
+        content = !post.selftext.includes('|:--') && <p>{post.selftext}</p>;
     } else if (post.post_hint === "link") {
         content = <div>
                     <a href={post.url} target="_blank" onClick={() => setLinkClicked(true)}>

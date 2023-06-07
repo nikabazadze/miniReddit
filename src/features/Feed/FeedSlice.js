@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { getSubredditPosts } from "../../API/redditAPI";
+import { selectSearchTerm } from "../Search/SearchSlice";
 
 export const loadPosts = createAsyncThunk(
     'feed/loadPosts',
@@ -33,5 +34,13 @@ export const feedSlice = createSlice({
 
 export const selectPosts = (state) => state.feed.posts;
 
+export const selectFilteredPosts = (state) => {
+    const searchTerm = selectSearchTerm(state);
+    const posts = selectPosts(state);
+    if (searchTerm) {
+        return posts.filter(post => post.title.toLowerCase().includes(searchTerm.toLowerCase()));
+    }
+    return posts;
+};
 
 export default feedSlice.reducer;

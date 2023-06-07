@@ -13,7 +13,7 @@ function Subreddits() {
 
     useEffect(() => {
         dispatch(loadSubreddits());
-    }, [])
+    }, [dispatch])
 
     return (
         <div className="subreddits">

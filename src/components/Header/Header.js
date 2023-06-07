@@ -6,11 +6,11 @@ import Search from '../../features/Search/Search.js'
 function Header() {
     return (
         <div className="header">
-            <div className="logo-container">
+            <div className="logo-container" onClick={() => window.location.reload(false)}>
                 <div className="logo">
-                    <a href="#"><img src={logo} alt="MiniReddit logo"/></a>
+                    <img src={logo} alt="MiniReddit logo"/>
                 </div>
-                <a href="#"><p><span className="highlight">Mini</span>Reddit</p></a>
+                <p><span className="highlight">Mini</span>Reddit</p>
             </div>
             <Search />
         </div>
