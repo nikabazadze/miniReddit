@@ -11,7 +11,7 @@
 
 .content-container {
     width: 94%;
-    padding: 0.6rem 0 0.5rem 0;
+    padding: 0.6rem 0 0.2rem 0;
     position: relative;
 }
 
@@ -34,8 +34,11 @@
 
 /* Content footer */
 .content-footer {
-    margin-top: 0.6rem;
-    padding: 0rem 0.8rem 0 0.6rem;
+    margin-top: 0.2rem;
+    padding: 0 0.5rem 0 0.3rem;
+}
+
+.footer-icons-wrapper {
     display: flex;
     justify-content: space-between;
 }
@@ -44,7 +47,12 @@
     display: flex;
     align-items: center;
     gap: 0.35rem;
+    padding: 0.3rem;
     cursor: pointer;
+}
+
+.comments-icon:hover {
+    background-color: #eee;
 }
 
 .footer-icon {
@@ -57,4 +65,20 @@
     font-weight: 700;
     word-spacing: -0.07rem;
     color: #868686;
+}
+
+
+/* Comments */
+
+.comments-skeleton-wrapper {
+    margin-top: 0.5rem;
+    padding: 0 0.6rem;
+}
+
+.react-loading-skeleton {
+    margin-bottom: 0.5rem;
+}
+
+.comments {
+    margin-top: 1rem;
 }

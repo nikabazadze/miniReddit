@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { getSubredditPosts } from "../../API/redditAPI";
+import { getSubredditPosts, getPostComments } from "../../API/redditAPI";
 import { selectSearchTerm } from "../Search/SearchSlice";
 
 export const loadPosts = createAsyncThunk(
@@ -7,27 +7,49 @@ export const loadPosts = createAsyncThunk(
     getSubredditPosts
 );
 
+export const loadPostComments = createAsyncThunk(
+    'feed/loadPostComments',
+    getPostComments
+);
+
 export const feedSlice = createSlice({
     name: "feed",
     initialState: {
         posts: [],
-        isLoading: false,
-        hasError: false
+        postIsLoading: false,
+        postHasError: false,
+        commentIsLoading: false,
+        commentHasError: false
     },
     reducers: {},
     extraReducers: {
         [loadPosts.pending]: (state, action) => {
-            state.isLoading = true;
-            state.hasError = false;
+            state.postIsLoading = true;
+            state.postHasError = false;
         },
         [loadPosts.fulfilled]: (state, action) => {
             state.posts = action.payload;
-            state.isLoading = false;
-            state.hasError = false;
+            state.postIsLoading = false;
+            state.postHasError = false;
         },
         [loadPosts.rejected]: (state, action) => {
-            state.isLoading = false;
-            state.hasError = true;
+            state.postIsLoading = false;
+            state.postHasError = true;
+        },
+        [loadPostComments.pending]: (state, action) => {
+            state.commentIsLoading = true;
+            state.commentHasError = false;
+        },
+        [loadPostComments.fulfilled]: (state, action) => {
+            const index = action.payload[0];
+            const comments = action.payload[1];
+            state.posts[index].comments = comments;
+            state.commentIsLoading = false;
+            state.commentHasError = false;
+        },
+        [loadPostComments.rejected]: (state, action) => {
+            state.commentIsLoading = false;
+            state.commentHasError = true;
         }
     }
 });
@@ -42,5 +64,10 @@ export const selectFilteredPosts = (state) => {
     }
     return posts;
 };
+
+export const selectPostIsLoading = (state) => state.feed.postIsLoading;
+export const selectPostHasError = (state) => state.feed.postHasError;
+export const selectCommentIsLoading = (state) => state.feed.commentIsLoading;
+export const selectCommentHasError = (state) => state.feed.commentHasError;
 
 export default feedSlice.reducer;
