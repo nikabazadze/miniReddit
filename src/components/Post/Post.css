@@ -82,3 +82,14 @@
 .comments {
     margin-top: 1rem;
 }
+
+.comments-error {
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin: 2rem 8rem;
+    padding: 1rem;
+    border: 1px solid #f6f7f8;
+    border-radius: 5%;
+    background-color: #f6f7f8;
+}

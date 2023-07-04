@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 import './Feed.css';
 import { selectFilteredPosts, selectPosts, loadPosts } from "./FeedSlice";
-import { selectChosenSubreddit } from "../SubReddits/SubRedditsSlice";
+import { selectChosenSubreddit, setChosenSubreddit } from "../SubReddits/SubRedditsSlice";
 import { selectSearchTerm, setSearchTerm } from "../Search/SearchSlice";
 import Post from "../../components/Post/Post";
 
@@ -14,12 +14,15 @@ function Feed() {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(loadPosts(chosenSubreddit));
-        dispatch(setSearchTerm(""));
+        if (chosenSubreddit) {
+            dispatch(loadPosts(chosenSubreddit));
+            dispatch(setSearchTerm(""));
+        }
     }, [chosenSubreddit, dispatch]);
 
     useEffect(() => {
         if (searchTerm) {
+            dispatch(setChosenSubreddit(""));
             dispatch(loadPosts("/r/all/"));
         }
     }, [searchTerm, dispatch]);

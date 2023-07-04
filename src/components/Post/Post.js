@@ -37,16 +37,16 @@ function Post({post, index}) {
     }
 
     function renderComments() {
-        if (commentHasError) {
-            return <div>
-                        <h3>Error Loading Comments!!!</h3>
-                   </div>
-        } else if (commentIsLoading) {
+        if (commentIsLoading) {
             return (
                 <div className="comments-skeleton-wrapper">
                     <Skeleton count={5} />
                 </div>
             )
+        } else if (commentHasError) {
+            return <div className="comments-error">
+                        <h3>Error Loading Comments!!!</h3>
+                   </div>
         } else {
             return <div className="comments">
                       {
@@ -59,7 +59,13 @@ function Post({post, index}) {
     }
 
     function handleHideClick({target}) {
-        const element = target.parentElement.parentElement.parentElement.parentElement;
+        let element = target.parentElement.parentElement.parentElement.parentElement;
+        if (element.getAttribute("class") === "content-container") {
+            element = element.parentElement;
+        } else if (element.getAttribute("class") === "content-footer") {
+            element = element.parentElement.parentElement;
+        }
+        console.log(element.getAttribute("class"));
         element.style.display = "none";
     }
 
