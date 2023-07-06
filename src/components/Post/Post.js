@@ -65,12 +65,11 @@ function Post({post, index}) {
         } else if (element.getAttribute("class") === "content-footer") {
             element = element.parentElement.parentElement;
         }
-        console.log(element.getAttribute("class"));
         element.style.display = "none";
     }
 
     return (
-        <div class="post">
+        <div className="post">
             <Sidebar score={post.score}/>
             <div className="content-container">
                 <div className="content-header">
