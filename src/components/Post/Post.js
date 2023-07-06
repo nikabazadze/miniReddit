@@ -15,11 +15,12 @@ import Content from "./Content/Content";
 import Comment from "./Comment/Comment";
 
 function Post({post, index}) {
-    const [ showComments, setShowComments ] = useState(false);
-    const dispatch = useDispatch();
-    const time = moment.unix(post.created_utc).fromNow();
     const [ postIsLoading, postHasError, commentIsLoading, commentHasError ] = 
           [ useSelector(selectPostIsLoading), useSelector(selectPostHasError), useSelector(selectCommentIsLoading), useSelector(selectCommentHasError) ];
+    const [ showComments, setShowComments ] = useState(false);
+    const [ showAllComments, setShowAllComments ] = useState(false);
+    const time = moment.unix(post.created_utc).fromNow();
+    const dispatch = useDispatch();
 
     function toggleComments() {
         if (!showComments) {
@@ -44,19 +45,43 @@ function Post({post, index}) {
                 </div>
             )
         } else if (commentHasError) {
-            return <div className="comments-error">
-                        <h3>Error Loading Comments!!!</h3>
-                   </div>
+            return (
+                <div className="comments-error">
+                    <h3>Error Loading Comments!!!</h3>
+                </div>
+            )
         } else {
-            return <div className="comments">
-                      {
-                        post.comments.map((comment) => {
-                            return <Comment comment={comment} />
-                        })
-                      }  
-                   </div>
+            if (post.comments.length < 10 || showAllComments) {
+                return (
+                    <div className="comments">
+                        {
+                            post.comments.map((comment, index) => {
+                                if (index !== post.comments.length - 1)
+                                return <Comment comment={comment} />
+                            })
+                        }
+                    </div>
+                )
+            } else {
+                return (
+                    <div className="comments">
+                        {
+                            post.comments.map((comment, index) => {
+                                if (index < 10)
+                                return <Comment comment={comment} />
+                            })
+                        }
+                        <button className="see-more-button" onClick={handleSeeMore}>See more</button>
+                    </div>
+                )
+            }
         }
     }
+
+    function handleSeeMore() {
+        setShowAllComments(true);
+        renderComments();
+    };
 
     function handleHideClick({target}) {
         let element = target.parentElement.parentElement.parentElement.parentElement;
