@@ -15,6 +15,7 @@ function Content({post}) {
     };
 
     function renderContent() {
+        // Renders text content
         if (post.is_self) {
             let text = !post.selftext.includes('|:--') ? post.selftext : "";
             if (text.length < 1000 || showLongText) {
@@ -29,6 +30,7 @@ function Content({post}) {
                     </div>
                 );
             }
+        // Renders external link content
         } else if (post.post_hint === "link") {
             return (
                 <div>
@@ -37,6 +39,7 @@ function Content({post}) {
                     </a>
                 </div>
             );
+        // Renders video content
         } else if (post.is_video) {
             return (
                 <div className="video-container">
@@ -45,6 +48,7 @@ function Content({post}) {
                     </video>    
                 </div>
             );
+        // Renders image content
         } else if (post.post_hint === "image") {
             return <img src={post.url} alt="post's media contnet"/>;
         } else {

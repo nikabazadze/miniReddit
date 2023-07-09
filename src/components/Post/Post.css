@@ -97,14 +97,14 @@
 
 .see-more-button {
     font-family: inherit;
+    font-size: 0.9rem;
     background-color: #fff;
     border: 0;
     padding: 0;
     cursor: pointer;
     position: relative;
-    left: 0.8rem;
-    text-decoration: underline;
-    color: #026aa7;
+    left: 0.5rem;
+    color: #868686;
 }
 
 .comments .see-more-button {

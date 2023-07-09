@@ -16,7 +16,7 @@ function Feed() {
     useEffect(() => {
         if (chosenSubreddit) {
             dispatch(loadPosts(chosenSubreddit));
-            dispatch(setSearchTerm(""));
+            searchTerm && dispatch(setSearchTerm(""));
         }
     }, [chosenSubreddit, dispatch]);
 

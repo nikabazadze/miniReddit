@@ -4,6 +4,7 @@ import './App.css';
 import Header from '../components/Header/Header';
 import SubReddits from '../features/SubReddits/SubReddits';
 import Feed from '../features/Feed/Feed';
+import RightColumn from '../components/RightColumn/RightColumn';
 
 function App() {
   return (
@@ -16,6 +17,9 @@ function App() {
       </main>
       <aside>
         <SubReddits />
+      </aside>
+      <aside>
+        <RightColumn />
       </aside>
     </div>
   );
