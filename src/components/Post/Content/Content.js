@@ -14,10 +14,27 @@ function Content({post}) {
         renderContent();
     };
 
+    function renderLink() {
+        return (
+            <div>
+                <a href={post.url} target="_blank" rel="noopener noreferrer" onClick={() => setLinkClicked(true)}>
+                    {shortLink(post.url)}<BiLinkExternal className={`link-icon ${linkClicked && "icon-clicked"}`}/>
+                </a>
+            </div>
+        );
+    };
+
     function renderContent() {
         // Renders text content
         if (post.is_self) {
-            let text = !post.selftext.includes('|:--') ? post.selftext : "";
+            let text = "";
+            // Checks for tables in the selftext
+            if (!post.selftext.includes('|:-') && !post.selftext.includes('|--')) {
+                text = post.selftext;
+            } else {
+                return renderLink();
+            }
+
             if (text.length < 1000 || showLongText) {
                 return <p>{text}</p>;
             } else {
@@ -30,15 +47,6 @@ function Content({post}) {
                     </div>
                 );
             }
-        // Renders external link content
-        } else if (post.post_hint === "link") {
-            return (
-                <div>
-                    <a href={post.url} target="_blank" onClick={() => setLinkClicked(true)}>
-                        {shortLink(post.url)}<BiLinkExternal className={`link-icon ${linkClicked && "icon-clicked"}`}/>
-                    </a>
-                </div>
-            );
         // Renders video content
         } else if (post.is_video) {
             return (
@@ -51,6 +59,9 @@ function Content({post}) {
         // Renders image content
         } else if (post.post_hint === "image") {
             return <img src={post.url} alt="post's media contnet"/>;
+        // Renders external link content
+        } else if (post.post_hint === "link" || post.domain) {
+            return renderLink();
         } else {
             return "";
         }

@@ -19,24 +19,20 @@ function Subreddits() {
         <div className="subreddits">
             <h2>Subreddits</h2>
             <ul>
-                {subreddits.map((subreddit, index) => {
-                    if (index > 1) {
-                        return (
-                            <li 
-                                key={subreddit.id} 
-                                className={`subreddit ${chosenSubreddit === subreddit.url ? 'chosenSubreddit' : ''}`}
-                                onClick={() => dispatch(setChosenSubreddit(subreddit.url))}
-                            >
-                                <img 
-                                    src={subreddit.icon_img || defaultAvatar}
-                                    alt={subreddit.display_name}
-                                    className="subreddit-avatar"
-                                />
-                                <p>{subreddit.display_name_prefixed}</p>
-                            </li>
-                        )
-                    };
-                })}
+                {subreddits.slice(2).map((subreddit) => (
+                    <li 
+                        key={subreddit.id} 
+                        className={`subreddit ${chosenSubreddit === subreddit.url ? 'chosenSubreddit' : ''}`}
+                        onClick={() => dispatch(setChosenSubreddit(subreddit.url))}
+                    >
+                        <img 
+                            src={subreddit.icon_img || defaultAvatar}
+                            alt={subreddit.display_name}
+                            className="subreddit-avatar"
+                        />
+                        <p>{subreddit.display_name_prefixed}</p>
+                    </li>
+                ))}
             </ul>
         </div>
     )

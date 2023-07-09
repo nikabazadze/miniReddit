@@ -52,24 +52,20 @@ function Post({post, index}) {
             )
         } else {
             if (post.comments.length < 10 || showAllComments) {
+                // Renders all comments
                 return (
                     <div className="comments">
                         {
-                            post.comments.map((comment, index) => {
-                                if (index !== post.comments.length - 1)
-                                return <Comment comment={comment} />
-                            })
+                            post.comments.slice(0, post.comments.length - 1).map((comment) => (<Comment comment={comment} />))
                         }
                     </div>
                 )
             } else {
+                // Renders only first 10 comments
                 return (
                     <div className="comments">
                         {
-                            post.comments.map((comment, index) => {
-                                if (index < 10)
-                                return <Comment comment={comment} />
-                            })
+                            post.comments.slice(0, 10).map((comment) => (<Comment comment={comment} />))
                         }
                         <button className="see-more-button" onClick={handleSeeMore}>See more</button>
                     </div>
