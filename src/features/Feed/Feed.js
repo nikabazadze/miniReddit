@@ -17,6 +17,7 @@ function Feed() {
         if (chosenSubreddit) {
             dispatch(loadPosts(chosenSubreddit));
             searchTerm && dispatch(setSearchTerm(""));
+            window.scrollTo(0, 0);
         }
     }, [chosenSubreddit, dispatch]);
 
@@ -24,6 +25,7 @@ function Feed() {
         if (searchTerm) {
             dispatch(setChosenSubreddit(""));
             dispatch(loadPosts("/r/all/"));
+            window.scrollTo(0, 0);
         }
     }, [searchTerm, dispatch]);
 
