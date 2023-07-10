@@ -20,7 +20,7 @@ function RightColumn() {
                 {feeds.map((feed, index) => (
                     <li 
                         key={feed.id} 
-                        className={`subreddit ${chosenSubreddit[0] === feed.url ? 'chosenSubreddit' : ''}`}
+                        className={`subreddit feed ${chosenSubreddit[0] === feed.url ? 'chosenFeed' : ''}`}
                         onClick={() => dispatch(setChosenSubreddit([feed.url, "feeds"]))}
                     >
                         <img 
@@ -37,7 +37,7 @@ function RightColumn() {
 
     function renderVisitedSubreddits() {
         return (
-            <ul>
+            <ul className="visited-subreddits-list">
                 {visitedSubreddits.map((subreddit) => (
                     <li 
                         key={subreddit.id} 
@@ -66,6 +66,12 @@ function RightColumn() {
                     {renderVisitedSubreddits()}
                 </div>
             )}
+            <div className="join-section">
+                <p>Create an account to follow your favorite communities and start taking part in conversations.</p>
+                <div className="button-container">
+                    <button className="join-button">Join MiniReddit</button>
+                </div>
+            </div>
         </div>
     )
 }

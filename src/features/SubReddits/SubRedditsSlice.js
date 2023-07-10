@@ -31,7 +31,7 @@ export const subredditsSlice = createSlice({
     reducers: {
         setChosenSubreddit: (state, action) => {state.chosenSubreddit = action.payload},
         clearChosenSubreddit: (state) => {state.chosenSubreddit = ""},
-        addVisitedSubreddit: (state, action) => {state.visitedSubreddits.push(action.payload)},
+        addVisitedSubreddit: (state, action) => {state.visitedSubreddits.unshift(action.payload)},
     },
     extraReducers: {
         [loadSubreddits.pending]: (state, action) => {
