@@ -31,14 +31,17 @@ function Feed() {
 
     return (
         <div id="feed">
-            {
+            {posts.length ? 
                 posts.map((post, index) => {
                     return <Post
                                 key={post.id}
                                 post={post}
                                 index={index}
                            />
-                })
+                }) : 
+            <div className="no-result">
+                <p>No Results Found</p>
+            </div>
             }
         </div>
     )
