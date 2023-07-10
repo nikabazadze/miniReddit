@@ -23,13 +23,15 @@ export const subredditsSlice = createSlice({
                 display_name_prefixed: "All"
             },
         ],
-        chosenSubreddit: "/r/popular/",
+        chosenSubreddit: ["/r/popular/", "feeds"],
+        visitedSubreddits: [],
         isLoading: false,
         hasError: false
     },
     reducers: {
         setChosenSubreddit: (state, action) => {state.chosenSubreddit = action.payload},
         clearChosenSubreddit: (state) => {state.chosenSubreddit = ""},
+        addVisitedSubreddit: (state, action) => {state.visitedSubreddits.push(action.payload)},
     },
     extraReducers: {
         [loadSubreddits.pending]: (state, action) => {
@@ -49,10 +51,11 @@ export const subredditsSlice = createSlice({
     }
 });
 
-export const { setChosenSubreddit, clearChosenSubreddit } = subredditsSlice.actions;
+export const { setChosenSubreddit, clearChosenSubreddit, addVisitedSubreddit } = subredditsSlice.actions;
 
 export const selectSubreddits = (state) => state.subreddits.subreddits;
 export const selectChosenSubreddit = (state) => state.subreddits.chosenSubreddit;
+export const selectVisitedSubreddits = (state) => state.subreddits.visitedSubreddits;
 export const selectFeeds = (state) => state.subreddits.subreddits.filter((subreddit, index) => (index < 2 && subreddit));
 
 export default subredditsSlice.reducer;

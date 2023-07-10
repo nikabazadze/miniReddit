@@ -14,16 +14,16 @@ function Feed() {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        if (chosenSubreddit) {
-            dispatch(loadPosts(chosenSubreddit));
+        if (chosenSubreddit.length > 0) {
+            dispatch(loadPosts(chosenSubreddit[0]));
             searchTerm && dispatch(setSearchTerm(""));
             window.scrollTo(0, 0);
         }
-    }, [chosenSubreddit, dispatch]);
+    }, [chosenSubreddit[0], dispatch]);
 
     useEffect(() => {
         if (searchTerm) {
-            dispatch(setChosenSubreddit(""));
+            dispatch(setChosenSubreddit([]));
             dispatch(loadPosts("/r/all/"));
             window.scrollTo(0, 0);
         }
