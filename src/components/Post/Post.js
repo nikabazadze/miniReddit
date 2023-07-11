@@ -9,14 +9,13 @@ import moment from 'moment';
 import './Post.css';
 import { shortNumber } from "../../utils/shortNumber";
 import { loadPostComments } from "../../features/Feed/FeedSlice";
-import { selectPostIsLoading, selectPostHasError, selectCommentIsLoading, selectCommentHasError } from "../../features/Feed/FeedSlice";
+import { selectCommentIsLoading, selectCommentHasError } from "../../features/Feed/FeedSlice";
 import Sidebar from "./Sidebar/Sidebar";
 import Content from "./Content/Content";
 import Comment from "./Comment/Comment";
 
 function Post({post, index}) {
-    const [ postIsLoading, postHasError, commentIsLoading, commentHasError ] = 
-          [ useSelector(selectPostIsLoading), useSelector(selectPostHasError), useSelector(selectCommentIsLoading), useSelector(selectCommentHasError) ];
+    const [ commentIsLoading, commentHasError ] = [ useSelector(selectCommentIsLoading), useSelector(selectCommentHasError) ];
     const [ showComments, setShowComments ] = useState(false);
     const [ showAllComments, setShowAllComments ] = useState(false);
     const time = moment.unix(post.created_utc).fromNow();
