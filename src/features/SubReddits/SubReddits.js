@@ -23,7 +23,13 @@ function Subreddits() {
     function renderSubreddits() {
         if (isLoading) {
             return renderLoadingSubreddits();
-        }
+        } else if (hasError) {
+            return (
+                <div className="subreddits-error">
+                    <p>Could Not Load Subreddits</p>
+                </div>
+            );
+        };
         return (
             <ul>
                 {subreddits.slice(2).map((subreddit) => (
@@ -52,7 +58,7 @@ function Subreddits() {
                                         <Skeleton className="subreddit-title-skeleton"/>
                                      </div>);
             loadingSubreddits.push(loadingSubreddit);
-        }
+        };
 
         return (
             <div className="subreddits-skeleton-wrapper">
@@ -62,8 +68,8 @@ function Subreddits() {
                     ))}
                 </ul>
             </div>
-        )
-    }
+        );
+    };
 
     function handleClick(subreddit) {
         dispatch(setChosenSubreddit([subreddit.url, "subreddits"]));

@@ -41,7 +41,13 @@ function Feed() {
                     {renderLoadingPost()}
                 </div>
             )
-        };
+        } else if (postHasError) {
+            return (
+                <div className="no-result">
+                    <p>Could Not Load Posts</p>
+                </div>
+            )
+        }
         return (
             <div>
                 {posts.length ? 
