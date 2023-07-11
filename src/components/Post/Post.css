@@ -85,14 +85,16 @@
 }
 
 .comments-error {
-    text-align: center;
+    background-color: #ffffff;
+    border-radius: 0.25rem;
+    box-shadow: 0px 0px 2px #ff7112;
+    color: #026aa7;
     font-size: 1.4rem;
-    font-weight: 500;
+    height: 4.5rem;
     margin: 2rem 8rem;
-    padding: 1rem;
-    border: 1px solid #f6f7f8;
-    border-radius: 5%;
-    background-color: #f6f7f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .see-more-button {

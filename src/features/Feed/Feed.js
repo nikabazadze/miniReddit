@@ -38,7 +38,7 @@ function Feed() {
                                 post={post}
                                 index={index}
                            />
-                }) : 
+                }) : searchTerm &&
             <div className="no-result">
                 <p>No Results Found</p>
             </div>
