@@ -19,7 +19,7 @@
 
 .post-content video {
     max-height: 35rem;
-    width: auto;
+    max-width: 100%;
     display: block;
 }
 
