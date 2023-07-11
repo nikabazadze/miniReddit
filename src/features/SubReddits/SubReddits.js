@@ -1,8 +1,11 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css'
 
 import './SubReddits.css';
-import { loadSubreddits, setChosenSubreddit, addVisitedSubreddit, selectSubreddits, selectChosenSubreddit, selectVisitedSubreddits } from "./SubRedditsSlice";
+import { loadSubreddits, setChosenSubreddit, addVisitedSubreddit, 
+         selectSubreddits, selectChosenSubreddit, selectVisitedSubreddits, selectSubredditIsLoading, selectSubredditHasError } from "./SubRedditsSlice";
 
 import defaultAvatar from './avatar.svg';
 
@@ -10,25 +13,18 @@ function Subreddits() {
     const subreddits = useSelector(selectSubreddits);
     let chosenSubreddit = useSelector(selectChosenSubreddit);
     const visitedSubreddits = useSelector(selectVisitedSubreddits);
+    const [ isLoading, hasError ] = [ useSelector(selectSubredditIsLoading), useSelector(selectSubredditHasError) ];
     const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch(loadSubreddits());
     }, [dispatch]);
 
-    function handleClick(subreddit) {
-        dispatch(setChosenSubreddit([subreddit.url, "subreddits"]));
-
-        // Checks if the clicked subreddit is "Popular" or "All" feed/subreddit
-        if (subreddit.id !== 1 && subreddit.id !== 2) {
-            // Checks if the clicked subreddit is already added in the visitedSubreddits array
-            !visitedSubreddits.find(visitedSubreddit => visitedSubreddit.id === subreddit.id) && dispatch(addVisitedSubreddit(subreddit));
+    function renderSubreddits() {
+        if (isLoading) {
+            return renderLoadingSubreddits();
         }
-    };
-
-    return (
-        <div className="subreddits">
-            <h2>Subreddits</h2>
+        return (
             <ul>
                 {subreddits.slice(2).map((subreddit) => (
                     <li 
@@ -45,6 +41,44 @@ function Subreddits() {
                     </li>
                 ))}
             </ul>
+        );
+    };
+
+    function renderLoadingSubreddits() {
+        const loadingSubreddits = [];
+        for (let i = 0; i < 20; i++) {
+            const loadingSubreddit = (<div className="subreddit-skeleton">
+                                        <Skeleton className="subreddit-avatar-skeleton"/>
+                                        <Skeleton className="subreddit-title-skeleton"/>
+                                     </div>);
+            loadingSubreddits.push(loadingSubreddit);
+        }
+
+        return (
+            <div className="subreddits-skeleton-wrapper">
+                <ul>
+                    {loadingSubreddits.map((subreddit, index) => (
+                        <li key={index}>{subreddit}</li>
+                    ))}
+                </ul>
+            </div>
+        )
+    }
+
+    function handleClick(subreddit) {
+        dispatch(setChosenSubreddit([subreddit.url, "subreddits"]));
+
+        // Checks if the clicked subreddit is "Popular" or "All" feed/subreddit
+        if (subreddit.id !== 1 && subreddit.id !== 2) {
+            // Checks if the clicked subreddit is already added in the visitedSubreddits array
+            !visitedSubreddits.find(visitedSubreddit => visitedSubreddit.id === subreddit.id) && dispatch(addVisitedSubreddit(subreddit));
+        }
+    };
+
+    return (
+        <div className="subreddits">
+            <h2>Subreddits</h2>
+            {renderSubreddits()}
         </div>
     );
 }

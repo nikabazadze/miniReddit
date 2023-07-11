@@ -44,3 +44,28 @@
 .subreddit p {
     font-size: 0.85rem;
 }
+
+/* Loading subreddits styles */
+.subreddits-skeleton-wrapper {
+    width: 100%;
+    padding: 0.5rem 1.2rem;
+}
+
+.subreddit-skeleton {
+    width: 100%;
+    padding-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.subreddit-avatar-skeleton {
+    width: 1.7rem;
+    height: 1.7rem;
+    border-radius: 50%;
+}
+
+.subreddit-title-skeleton {
+    width: 10rem;
+    height: 1rem;
+}

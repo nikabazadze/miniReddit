@@ -41,7 +41,7 @@ function Feed() {
                     {renderLoadingPost()}
                 </div>
             )
-        }
+        };
         return (
             <div>
                 {posts.length ? 
@@ -57,8 +57,8 @@ function Feed() {
                 </div>
                 }
             </div>
-        )
-    }
+        );
+    };
 
     function renderLoadingPost() {
         return (

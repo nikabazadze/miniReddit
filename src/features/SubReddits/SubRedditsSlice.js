@@ -58,4 +58,7 @@ export const selectChosenSubreddit = (state) => state.subreddits.chosenSubreddit
 export const selectVisitedSubreddits = (state) => state.subreddits.visitedSubreddits;
 export const selectFeeds = (state) => state.subreddits.subreddits.filter((subreddit, index) => (index < 2 && subreddit));
 
+export const selectSubredditIsLoading = (state) => state.subreddits.isLoading;
+export const selectSubredditHasError = (state) => state.subreddits.hasError;
+
 export default subredditsSlice.reducer;
