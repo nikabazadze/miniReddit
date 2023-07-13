@@ -2,6 +2,8 @@ import React from "react";
 import './Header.css';
 import logo from './logo.png';
 import Search from '../../features/Search/Search.js'
+import popularIcon from '../popularIcon.png';
+import allIcon from '../allIcon.png';
 
 function Header() {
     return (

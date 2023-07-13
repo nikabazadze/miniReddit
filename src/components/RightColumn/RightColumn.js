@@ -2,8 +2,9 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import './RightColumn.css';
-import popularIcon from './popularIcon.png';
-import allIcon from './allIcon.png';
+import popularIcon from '../popularIcon.png';
+import allIcon from '../allIcon.png';
+import JoinButton from "../JoinButton/JoinButton";
 import defaultAvatar from '../../features/SubReddits/avatar.svg';
 
 import { selectFeeds, selectChosenSubreddit, selectVisitedSubreddits, setChosenSubreddit } from "../../features/SubReddits/SubRedditsSlice";
@@ -68,9 +69,7 @@ function RightColumn() {
             )}
             <div className="join-section">
                 <p>Create an account to follow your favorite communities and start taking part in conversations.</p>
-                <div className="button-container">
-                    <button className="join-button">Join MiniReddit</button>
-                </div>
+                <JoinButton />
             </div>
         </div>
     )

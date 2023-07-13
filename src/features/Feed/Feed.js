@@ -33,39 +33,25 @@ function Feed() {
         }
     }, [searchTerm, dispatch]);
 
-    function renderPosts() {
-        if (postIsLoading) {
-            return (
-                <div>
-                    {renderLoadingPost()}
-                    {renderLoadingPost()}
-                </div>
-            )
-        } else if (postHasError) {
-            return (
-                <div className="no-result">
-                    <p>Could Not Load Posts</p>
-                </div>
-            )
-        }
+    if (postIsLoading) {
         return (
-            <div>
-                {posts.length ? 
-                    posts.map((post, index) => {
-                        return <Post
-                                    key={post.id}
-                                    post={post}
-                                    index={index}
-                            />
-                    }) : searchTerm &&
-                <div className="no-result">
-                    <p>No Results Found</p>
-                </div>
-                }
+            <div id="feed">
+                {renderLoadingPost()}
+                {renderLoadingPost()}
             </div>
         );
     };
 
+    if (postHasError) {
+        return (
+            <div id="feed">
+                <div className="no-result">
+                    <p>Could Not Load Posts</p>
+                </div>
+            </div>
+        );
+    };
+        
     function renderLoadingPost() {
         return (
             <div className="post-skeleton-wrapper">
@@ -83,7 +69,18 @@ function Feed() {
 
     return (
         <div id="feed">
-            {renderPosts()}
+            {posts.length ? 
+                posts.map((post, index) => {
+                    return <Post
+                                key={post.id}
+                                post={post}
+                                index={index}
+                            />
+                }) : searchTerm &&
+            <div className="no-result">
+                <p>No Results Found</p>
+            </div>
+            }
         </div>
     )
 }

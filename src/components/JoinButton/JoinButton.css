@@ -1,0 +1,45 @@
+.join-button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.join-button {
+    font-family: 'Lato', sans-serif;
+    background-color: #ff6112;
+    color: #fff;
+    font-size: 0.95rem;
+    text-align: center;
+    border: 0;
+    cursor: pointer;
+    width: 100%;
+    padding: 0.7rem 0;
+    border-radius: 2rem;
+    font-weight: 700;
+    transition: background-color 0.2s;
+}
+
+.join-button:hover {
+    background-color: #ff7112;
+    color: #fff;
+}
+
+.join-button:active {
+    font-size: 0.93rem;
+    width: 98%;
+    margin: 0.1rem 0;
+    padding: 0.6rem 0;
+}
+
+
+/* Media queries */
+@media only screen and (max-width: 1200px) {
+    .join-button {
+        font-size: 0.9rem;
+        padding: 0.6rem 0;
+    }
+
+    .join-button:active {
+        font-size: 0.88rem;
+        padding: 0.5rem 0;
+    }
+}
