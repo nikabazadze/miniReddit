@@ -127,3 +127,13 @@
     margin-left: 1.8rem;
     margin-bottom: 0.5rem;
 }
+
+@media only screen and (max-width: 1050px) {
+    .content-header h2 {
+        font-size: 1.1rem;
+    }
+    
+    .see-more-button {
+        font-size: 0.85rem;
+    }
+}
