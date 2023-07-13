@@ -5,6 +5,12 @@
     margin-top: 1rem;
 }
 
+@media only screen and (max-height: 900px) {
+    .post-content {
+        max-height: 30rem;
+    }
+}
+
 .post-content img {
     max-width: 100%;
     height: auto;
@@ -25,9 +31,15 @@
 
 .post-content p {
     font-size: 0.95rem;
-    line-height: 1.5;
-    padding: 0 1.6rem 0 0.6rem;
+    line-height: 1.4;
+    padding: 0 2rem 0 0.6rem;
     color: #353535;
+}
+
+@media only screen and (max-width: 1300px) {
+    .post-content p {
+        font-size: 0.9rem;
+    }
 }
 
 .post-content a {
@@ -64,7 +76,7 @@
 }
 
 .short-text {
-    padding: 0 1.6rem 0 0.6rem;
+    padding: 0 2rem 0 0.6rem;
 }
 
 .short-text p {

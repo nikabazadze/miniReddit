@@ -3,7 +3,9 @@
     background-color: #ffffff;
     border-radius: 0 0.25rem 0.25rem 0;
     border-top: 1px solid #dae0e6;
-    width: 18rem;
+    width: 17%;
+    min-width: 14rem;
+    max-width: 18rem;
     height: calc(100vh - 3rem);
     position: fixed;
     top: 3rem;
@@ -83,4 +85,25 @@
 .subreddit-title-skeleton {
     width: 10rem;
     height: 1rem;
+}
+
+
+/* Media queries */
+@media only screen and (max-width: 1200px) {
+    .subreddits {
+        min-width: 13.3rem;
+    }
+    
+    .subreddits h2 {
+        font-size: 1.2rem;
+    }
+
+    .subreddit-avatar {
+        width: 1.6rem;
+        height: 1.6rem;
+    }
+
+    .subreddit p {
+        font-size: 0.8rem;
+    }
 }

@@ -11,7 +11,7 @@
 /* Content styles */
 
 .content-container {
-    width: 94%;
+    width: calc(100% - 2.8rem);
     padding: 0.6rem 0 0.2rem 0;
     position: relative;
 }
@@ -31,6 +31,20 @@
     font-weight: 500;
     color: #353535;
     margin: 0.5em 0;
+}
+
+@media only screen and (max-width: 1300px) {
+    .content-container {
+        width: calc(100% - 2.4rem);
+    }
+
+    .content-header span {
+        font-size: 0.7rem;
+    }
+
+    .content-header h2 {
+        font-size: 1.15rem;
+    }
 }
 
 /* Content footer */

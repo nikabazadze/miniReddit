@@ -1,7 +1,7 @@
 .sideBar {
     background-color: #f6f7f8;
     border-radius: 0.25rem 0 0 0.25rem;
-    width: 6%;
+    width: 2.8rem;
     padding-top: 0.8rem;
     display: flex;
     flex-direction: column;
@@ -28,6 +28,20 @@
     font-size: 0.8rem;
     font-weight: 700;
     color: auto;
+}
+
+@media only screen and (max-width: 1300px) {
+    .sideBar {
+        width: 2.4rem;
+    }
+
+    .vote-icon {
+        font-size: 1.35rem;
+    }
+
+    .sideBar span {
+        font-size: 0.7rem;
+    }
 }
 
 .bigNum {
