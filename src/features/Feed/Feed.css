@@ -4,6 +4,14 @@
     margin: 4.5rem auto;
 }
 
+@media only screen and (max-width: 1050px) {
+    #feed {
+        width: 60%;
+        min-width: 35rem;
+        margin-left: 30%;
+    }
+}
+
 .no-result {
     font-family: 'Roboto', sans-serif;
     font-size: 1.7rem;

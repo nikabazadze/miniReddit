@@ -40,3 +40,30 @@
 .highlight {
     color: #026aa7;
 }
+
+/* Media queries */
+@media only screen and (max-width: 1200px) {
+    .logo-container p {
+        font-size: 1.15rem;
+    }
+
+    .logo {
+        width: 2rem;
+        height: 2rem;
+    }
+}
+
+@media only screen and (max-width: 1050px) {
+    .header {
+        height: 2.6rem;
+    }
+
+    .logo-container p {
+        font-size: 1.05rem;
+    }
+
+    .logo {
+        width: 1.8rem;
+        height: 1.8rem;
+    }
+}

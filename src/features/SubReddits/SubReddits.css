@@ -13,6 +13,12 @@
     overflow-y: auto;
 }
 
+@media only screen and (max-width: 1050px) {
+    .subreddits {
+        top: 2.6rem;
+    }
+}
+
 .subreddits h2 {
     font-size: 1.3rem;
     font-weight: 500;
