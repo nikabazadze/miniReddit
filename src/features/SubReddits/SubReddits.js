@@ -71,13 +71,21 @@ function Subreddits() {
         );
     };
 
+    /**
+     * Sets chosen subreddit and if the viewport width is more than 1050px adds
+     * subreddit in the visitedSubreddit object if it is not already added
+     * @param {Object} subreddit 
+     */
     function handleClick(subreddit) {
         dispatch(setChosenSubreddit([subreddit.url, "subreddits"]));
 
-        // Checks if the clicked subreddit is "Popular" or "All" feed/subreddit
-        if (subreddit.id !== 1 && subreddit.id !== 2) {
-            // Checks if the clicked subreddit is already added in the visitedSubreddits array
-            !visitedSubreddits.find(visitedSubreddit => visitedSubreddit.id === subreddit.id) && dispatch(addVisitedSubreddit(subreddit));
+        // Checks if the viewport width is more than 1050px. Below 1050px visited subreddits section is not rendered
+        if (window.innerWidth > 1050) {
+            // Checks if the clicked subreddit is "Popular" or "All" feed/subreddit
+            if (subreddit.id !== 1 && subreddit.id !== 2) {
+                // Checks if the clicked subreddit is already added in the visitedSubreddits array
+                !visitedSubreddits.find(visitedSubreddit => visitedSubreddit.id === subreddit.id) && dispatch(addVisitedSubreddit(subreddit));
+            }
         }
     };
 

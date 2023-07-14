@@ -2,6 +2,7 @@
     width: 100%;
     height: 3rem;
     background-color: #ffffff;
+    border-bottom: 1px solid #dae0e6;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -45,7 +46,7 @@
 /* Header Feeds and CTA button styles for narrow screen */
 .inheader-feeds-cta {
     position: absolute;
-    left: 79%;
+    left: 79.5%;
     display: none;
 }
 
@@ -55,8 +56,8 @@
 }
 
 .feed-icon {
-    width: 1.7rem;
-    height: 1.7rem;
+    width: 1.8rem;
+    height: 1.8rem;
     padding: 0.2rem;
     cursor: pointer;
 }
@@ -70,7 +71,7 @@
 }
 
 .header-cta-container {
-    width: 4.5rem;
+    width: 5rem;
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -82,37 +83,27 @@
     .logo-container p {
         font-size: 1.15rem;
     }
-
-    .logo {
-        width: 2rem;
-        height: 2rem;
-    }
 }
 
 @media only screen and (max-width: 1050px) {
-    .header {
-        height: 2.6rem;
-    }
-
-    .logo-container p {
-        font-size: 1.05rem;
-    }
-
-    .logo {
-        width: 1.8rem;
-        height: 1.8rem;
-    }
-
     .inheader-feeds-cta {
         display: flex;
         justify-content: center;
-        gap: 1.4rem;
+        gap: 1rem;
     }
 }
 
 @media only screen and (max-width: 850px) {
+    .logo-container p {
+        display: none;
+    }
+
+    .header-cta-container {
+        width: 5.5rem;
+    }
+    
     .inheader-feeds-cta {
-        left: calc(100vw - 4.5rem - 1rem);
+        left: calc(100vw - 5.5rem - 1rem);
     }
 
     .feeds-container {
