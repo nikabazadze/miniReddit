@@ -41,6 +41,42 @@
     color: #026aa7;
 }
 
+
+/* Header Feeds and CTA button styles for narrow screen */
+.inheader-feeds-cta {
+    position: absolute;
+    left: 79%;
+    display: none;
+}
+
+.feeds-container {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.feed-icon {
+    width: 1.7rem;
+    height: 1.7rem;
+    padding: 0.2rem;
+    cursor: pointer;
+}
+
+.feed-icon:hover {
+    background-color: #d8d8d8;
+}
+
+.chosen-feed-icon {
+    background-color: #e8e8e8;
+}
+
+.header-cta-container {
+    width: 4.5rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+
 /* Media queries */
 @media only screen and (max-width: 1200px) {
     .logo-container p {
@@ -65,5 +101,21 @@
     .logo {
         width: 1.8rem;
         height: 1.8rem;
+    }
+
+    .inheader-feeds-cta {
+        display: flex;
+        justify-content: center;
+        gap: 1.4rem;
+    }
+}
+
+@media only screen and (max-width: 850px) {
+    .inheader-feeds-cta {
+        left: calc(100vw - 4.5rem - 1rem);
+    }
+
+    .feeds-container {
+        display: none;
     }
 }

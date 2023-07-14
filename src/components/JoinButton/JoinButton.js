@@ -1,12 +1,8 @@
 import React from "react";
 import './JoinButton.css';
 
-function JoinButton() {
-    return (
-        <div className="join-button-container">
-            <button className="join-button">Join MiniReddit</button>
-        </div>
-    );
+function JoinButton({cta, placement}) {
+    return <button className={`join-button ${placement}`}>{cta}</button>;
 }
 
 export default JoinButton;

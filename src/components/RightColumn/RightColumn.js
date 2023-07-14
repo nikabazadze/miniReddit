@@ -69,7 +69,7 @@ function RightColumn() {
             )}
             <div className="join-section">
                 <p>Create an account to follow your favorite communities and start taking part in conversations.</p>
-                <JoinButton />
+                <JoinButton cta="Join MiniReddit" placement="right-column" />
             </div>
         </div>
     )

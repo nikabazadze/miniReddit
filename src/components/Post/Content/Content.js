@@ -51,7 +51,7 @@ function Content({post}) {
         } else if (post.is_video) {
             return (
                 <div className="video-container">
-                   <video src={post.media.reddit_video.fallback_url} playsinline controls>
+                   <video src={post.media.reddit_video.fallback_url} playsInline controls>
                         Video not supported
                     </video>    
                 </div>

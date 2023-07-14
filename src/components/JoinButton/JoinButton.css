@@ -1,18 +1,11 @@
-.join-button-container {
-    display: flex;
-    justify-content: center;
-}
-
 .join-button {
     font-family: 'Lato', sans-serif;
     background-color: #ff6112;
     color: #fff;
-    font-size: 0.95rem;
     text-align: center;
     border: 0;
     cursor: pointer;
     width: 100%;
-    padding: 0.7rem 0;
     border-radius: 2rem;
     font-weight: 700;
     transition: background-color 0.2s;
@@ -23,22 +16,39 @@
     color: #fff;
 }
 
-.join-button:active {
+.right-column {
+    font-size: 0.95rem;
+    padding: 0.7rem 0;
+}
+
+.right-column:active {
     font-size: 0.93rem;
     width: 98%;
-    margin: 0.1rem 0;
     padding: 0.6rem 0;
+    margin: 0.1rem 0;
+}
+
+.header-cta {
+    font-size: 0.85rem;
+    padding: 0.3rem 0;
+}
+
+.header-cta:active {
+    font-size: 0.83rem;
+    width: 98%;
+    padding: 0.25rem 0;
+    margin: 0.05rem 0;
 }
 
 
 /* Media queries */
 @media only screen and (max-width: 1200px) {
-    .join-button {
+    .right-column {
         font-size: 0.9rem;
         padding: 0.6rem 0;
     }
 
-    .join-button:active {
+    .right-column:active {
         font-size: 0.88rem;
         padding: 0.5rem 0;
     }
