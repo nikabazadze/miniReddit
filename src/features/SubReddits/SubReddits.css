@@ -1,35 +1,8 @@
-.subreddits {
-    font-family: 'Roboto', sans-serif;
-    background-color: #ffffff;
-    border-radius: 0 0.25rem 0.25rem 0;
-    width: 17%;
-    min-width: 14rem;
-    max-width: 18rem;
-    height: calc(100vh - 3rem);
-    position: fixed;
-    top: 3rem;
-    padding-bottom: 0.5rem;
-    overflow-y: auto;
-}
-
-@media only screen and (max-width: 850px) {
-    .subreddits {
-        display: none;
-    }
-}
-
-.subreddits h2 {
-    font-size: 1.3rem;
-    font-weight: 500;
-    padding: 1.2rem;
-    padding-bottom: 0.7rem;
-}
-
 .subreddit {
     display: flex;
     align-items: center;
     gap: 0.3rem;
-    padding: 0.5rem 1.2rem;
+    padding: 0.5rem 1rem;
     cursor: pointer;
 }
 
@@ -95,14 +68,6 @@
 
 /* Media queries */
 @media only screen and (max-width: 1200px) {
-    .subreddits {
-        min-width: 13.3rem;
-    }
-    
-    .subreddits h2 {
-        font-size: 1.2rem;
-    }
-
     .subreddit-avatar {
         width: 1.6rem;
         height: 1.6rem;

@@ -18,7 +18,7 @@ function Feeds() {
                 {feeds.map((feed, index) => (
                     <li 
                         key={feed.id} 
-                        className={`subreddit feed ${chosenSubreddit[0] === feed.url ? 'chosenFeed' : ''}`}
+                        className={`feed ${chosenSubreddit[0] === feed.url ? 'chosenFeed' : ''}`}
                         onClick={() => dispatch(setChosenSubreddit([feed.url, "feeds"]))}
                     >
                         <img 

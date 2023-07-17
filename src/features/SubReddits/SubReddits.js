@@ -73,7 +73,7 @@ function Subreddits() {
 
     /**
      * Sets chosen subreddit and if the viewport width is more than 1050px adds
-     * subreddit in the visitedSubreddit object if it is not already added
+     * subreddit in the visitedSubreddit object, if it is not already added.
      * @param {Object} subreddit 
      */
     function handleClick(subreddit) {
@@ -90,7 +90,7 @@ function Subreddits() {
     };
 
     return (
-        <div className="subreddits">
+        <div id="subreddits">
             <h2>Subreddits</h2>
             {renderSubreddits()}
         </div>

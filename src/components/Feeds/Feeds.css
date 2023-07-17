@@ -1,9 +1,17 @@
-.chosenFeed {
-    background-color: #0000000f;
+.feed {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
 }
 
 .feed:hover {
     background-color: #d8d8d8;
+}
+
+.chosenFeed {
+    background-color: #0000000f;
 }
 
 .feed-avatar {
@@ -11,12 +19,8 @@
     height: 1.3rem;
 }
 
-#feeds .subreddit {
-    padding-left: 1rem;
-    padding-top: 0.5rem;
-}
-
-#feeds .subreddit p {
+#feeds p {
+    font-size: 0.85rem;
     padding-top: 0.2rem;
     padding-left: 0.3rem;
 }
@@ -26,5 +30,9 @@
     .feed-avatar {
         width: 1.2rem;
         height: 1.2rem;
+    }
+
+    #feeds p {
+        font-size: 0.8rem;
     }
 }
