@@ -19,18 +19,20 @@ function Header() {
 
     return (
         <div id="header">
-            <div id="dropdown-menu" onClick={() => setShowMenu(!showMenu)} >
-                <img src={menuIcon} alt="Dropdown menu icon" className="menu-icon"/>
-            </div>
-            {showMenu && <Menu />}
-            <div className="logo-container" onClick={() => window.location.reload(false)}>
-                <div className="logo">
-                    <img src={logo} alt="MiniReddit logo"/>
+            <div className="header-leftside-container">
+                <div className="logo-container" onClick={() => window.location.reload(false)}>
+                    <div className="logo">
+                        <img src={logo} alt="MiniReddit logo"/>
+                    </div>
+                    <p><span className="highlight">Mini</span>Reddit</p>
                 </div>
-                <p><span className="highlight">Mini</span>Reddit</p>
+                <div id="dropdown-menu" onClick={() => setShowMenu(!showMenu)} >
+                    <img src={menuIcon} alt="Dropdown menu icon" className="menu-icon"/>
+                </div>
+                {showMenu && <Menu />}
             </div>
             <Search />
-            <div className="inheader-feeds-cta">
+            <div className="header-rightside-container">
                 <ul className="feeds-container">
                     <li onClick={() => dispatch(setChosenSubreddit(["/r/popular/", "feeds"]))}>
                         <img 
