@@ -13,58 +13,12 @@
     left: calc(75% + 1.5rem);
 }
 
-@media only screen and (min-width: 100rem) {
-    #right-column {
-        left: calc(50% + 25rem + 1.5rem);
-    }
-}
-
-@media only screen and (max-width: 1050px) {
-    #right-column {
-        display: none;
-    }
-}
-
 #right-column h3 {
     font-size: 1rem;
     font-weight: 500;
     padding: 1rem;
     padding-bottom: 0.7rem;
     color: #535353;
-}
-
-.chosenFeed {
-    background-color: #0000000f;
-}
-
-.feed:hover {
-    background-color: #d8d8d8;
-}
-
-
-/* Visited subreddits styles */
-.visited-subreddits {
-    margin-top: 1.5rem;
-}
-
-.visited-subreddits-list {
-    max-height: 40vh;
-    overflow-y: auto;
-}
-
-#right-column .subreddit {
-    padding-left: 1rem;
-    padding-top: 0.5rem;
-}
-
-#right-column .subreddit p {
-    padding-top: 0.2rem;
-    padding-left: 0.3rem;
-}
-
-.feed-avatar {
-    width: 1.3rem;
-    height: 1.3rem;
 }
 
 
@@ -87,17 +41,24 @@
 
 
 /* Media queries */
+@media only screen and (min-width: 100rem) {
+    #right-column {
+        left: calc(50% + 25rem + 1.5rem);
+    }
+}
+
 @media only screen and (max-width: 1200px) {
     #right-column h3 {
         font-size: 0.95rem;
     }
 
-    .feed-avatar {
-        width: 1.2rem;
-        height: 1.2rem;
-    }
-
     .join-section p {
         font-size: 0.85rem;
+    }
+}
+
+@media only screen and (max-width: 1050px) {
+    #right-column {
+        display: none;
     }
 }

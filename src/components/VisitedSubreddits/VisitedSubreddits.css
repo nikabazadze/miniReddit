@@ -1,0 +1,17 @@
+#visited-subreddits {
+    margin-top: 1.5rem;
+}
+
+.visited-subreddits-list {
+    max-height: 40vh;
+    overflow-y: auto;
+}
+
+#visited-subreddits .subreddit {
+    padding-left: 1rem;
+    padding-top: 0.5rem;
+}
+#visited-subreddits .subreddit p {
+    padding-top: 0.2rem;
+    padding-left: 0.3rem;
+}
