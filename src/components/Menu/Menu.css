@@ -1,0 +1,31 @@
+#menu {
+    font-family: 'Roboto', sans-serif;
+    background-color: #ffffff;
+    border-right: 1px solid #dae0e6;
+    width: 17%;
+    min-width: 14rem;
+    height: calc(100vh - 3rem);
+    position: fixed;
+    top: 2.9rem;
+    left: 0;
+    padding-bottom: 0.5rem;
+    overflow-y: auto;
+}
+
+#menu h2,
+#menu h3 {
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 1rem;
+    padding-bottom: 0.7rem;
+    color: #535353;
+}
+
+#menu h2 {
+    padding-top: 0.5rem;
+}
+
+.menu-line {
+    border-top: 1px solid #d8d8d8;
+    margin: 1rem;
+}

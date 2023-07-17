@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import './Header.css';
@@ -7,14 +8,21 @@ import Search from '../../features/Search/Search.js'
 import JoinButton from "../JoinButton/JoinButton";
 import popularIcon from '../popularIcon.png';
 import allIcon from '../allIcon.png';
+import menuIcon from './menuIcon.svg';
 import { setChosenSubreddit, selectChosenSubreddit } from "../../features/SubReddits/SubRedditsSlice";
+import Menu from "../Menu/Menu";
 
 function Header() {
+    const [ showMenu, setShowMenu ] = useState(false);
     let chosenSubreddit = useSelector(selectChosenSubreddit);
     const dispatch = useDispatch();
 
     return (
-        <div className="header">
+        <div id="header">
+            <div id="dropdown-menu" onClick={() => setShowMenu(!showMenu)} >
+                <img src={menuIcon} alt="Dropdown menu icon" className="menu-icon"/>
+            </div>
+            {showMenu && <Menu />}
             <div className="logo-container" onClick={() => window.location.reload(false)}>
                 <div className="logo">
                     <img src={logo} alt="MiniReddit logo"/>

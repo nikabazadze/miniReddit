@@ -1,4 +1,4 @@
-.header {
+#header {
     width: 100%;
     height: 3rem;
     background-color: #ffffff;
@@ -11,6 +11,32 @@
     z-index: 100;
 }
 
+
+/* Dropdown menu icon styles */
+#dropdown-menu {
+    position: absolute;
+    left: 5rem;
+    cursor: pointer;
+}
+
+.menu-icon {
+    width: 1.8rem;
+    height: 1.8rem;
+    padding: 0.2rem;
+}
+
+.menu-icon:hover {
+    background-color: #0000000f;
+}
+
+@media only screen and (min-width: 851px) {
+    #dropdown-menu {
+        display: none;
+    }
+}
+
+
+/* Logo styles */
 .logo-container {
     display: flex;
     justify-content: center;
