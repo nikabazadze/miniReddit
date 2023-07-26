@@ -35,10 +35,10 @@ function Content({post}) {
                 return renderLink();
             }
 
-            if (text.length < 1000 || showLongText) {
+            if (text.length < 700 || showLongText) {
                 return <p>{text}</p>;
             } else {
-                let shortText = text.slice(0, 1000);
+                let shortText = text.slice(0, 700);
                 shortText += "...";
                 return (
                     <div className="short-text">

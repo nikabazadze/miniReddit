@@ -4,9 +4,9 @@ import './Menu.css';
 import Feeds from "../Feeds/Feeds";
 import Subreddits from "../../features/SubReddits/SubReddits";
 
-function Menu() {
+function Menu({onClick}) {
     return (
-        <div id="menu">
+        <div id="menu" onClick={() => onClick(false)}>
             <Feeds />
             <div className="menu-line"></div>
             <Subreddits />

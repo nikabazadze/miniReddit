@@ -29,7 +29,7 @@ function Header() {
                 <div id="dropdown-menu" onClick={() => setShowMenu(!showMenu)} >
                     <img src={menuIcon} alt="Dropdown menu icon" className="menu-icon"/>
                 </div>
-                {showMenu && <Menu />}
+                {showMenu && <Menu onClick={setShowMenu} />}
             </div>
             <Search />
             <div className="header-rightside-container">
