@@ -21,6 +21,10 @@ function Post({post, index}) {
     const time = moment.unix(post.created_utc).fromNow();
     const dispatch = useDispatch();
 
+    /**
+     * It hides or shows comments. On first click, it dispatches
+     * action to redux store to fetch the comments
+     */
     function toggleComments() {
         if (!showComments) {
             if (!post.comments) {
@@ -36,6 +40,11 @@ function Post({post, index}) {
         }
     }
 
+    /**
+     * Firstly, it renders loading skeleton while fetching comments.
+     * If successful fetch it renders comments, otherwise renders error message.
+     * @returns comments
+     */
     function renderComments() {
         if (commentIsLoading) {
             return (
@@ -73,11 +82,19 @@ function Post({post, index}) {
         }
     }
 
+    /**
+     * When clicked it shows all the comments
+     */
     function handleSeeMore() {
         setShowAllComments(true);
         renderComments();
     };
 
+    /**
+     * Hides the post. Firstly, it tries to find the main "post" container and
+     * then shrinks it with transition (animation). Finally, removes it from view
+     * @param {Object} event 
+     */
     function handleHideClick({target}) {
         let element = target.parentElement.parentElement.parentElement.parentElement;
         if (element.getAttribute("class") === "content-container") {
@@ -85,7 +102,10 @@ function Post({post, index}) {
         } else if (element.getAttribute("class") === "content-footer") {
             element = element.parentElement.parentElement;
         }
-        element.style.display = "none";
+        element.style.width = "40%"
+        setTimeout(() => {
+            element.style.display = "none";
+        }, 150)
     }
 
     return (

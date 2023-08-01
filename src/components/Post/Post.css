@@ -5,6 +5,7 @@
     width: 100%;
     margin-bottom: 1rem;
     display: flex;
+    transition: width 0.15s ease-in-out;
 }
 
 
