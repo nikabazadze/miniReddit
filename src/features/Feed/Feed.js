@@ -17,6 +17,7 @@ function Feed() {
     const [ postIsLoading, postHasError ] = [ useSelector(selectPostIsLoading), useSelector(selectPostHasError) ];
     const dispatch = useDispatch();
 
+    // Loads chosen subreddit's posts
     useEffect(() => {
         if (chosenSubreddit.length > 0) {
             dispatch(loadPosts(chosenSubreddit[0]));
@@ -25,6 +26,7 @@ function Feed() {
         }
     }, [chosenSubreddit, dispatch]);
 
+    // When search term is set, it loads "all" subreddits to filter post's titles with search term
     useEffect(() => {
         if (searchTerm) {
             dispatch(setChosenSubreddit([]));
@@ -33,6 +35,7 @@ function Feed() {
         }
     }, [searchTerm, dispatch]);
 
+    // If post is loading it returns two loading post skeletons
     if (postIsLoading) {
         return (
             <div id="feed">
@@ -42,6 +45,7 @@ function Feed() {
         );
     };
 
+    // If there is an error while fetching posts, it returns loading error message
     if (postHasError) {
         return (
             <div id="feed">
@@ -51,11 +55,15 @@ function Feed() {
             </div>
         );
     };
-        
+     
+    /**
+     * Renders loading post skeleton
+     * @returns loading skeleton
+     */
     function renderLoadingPost() {
         return (
             <div className="post-skeleton-wrapper">
-                <Sidebar score={""}/>
+                <Sidebar score={""} display="sidebar-desktop" />
                 <div className="post-skeletons">
                     <Skeleton className="author-skeleton" />
                     <Skeleton className="title-skeleton first" />

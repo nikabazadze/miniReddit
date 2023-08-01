@@ -1,4 +1,4 @@
-.sideBar {
+.sidebar-desktop {
     background-color: #f6f7f8;
     border-radius: 0.25rem 0 0 0.25rem;
     width: 2.8rem;
@@ -8,6 +8,10 @@
     align-items: center;
     gap: 0.45rem;
     color: #353535;
+}
+
+.sidebar-mobile {
+    display: none;
 }
 
 .vote-icon {
@@ -24,24 +28,10 @@
     color: red;
 }
 
-.sideBar span {
+#sidebar span {
     font-size: 0.8rem;
     font-weight: 700;
     color: auto;
-}
-
-@media only screen and (max-width: 1300px) {
-    .sideBar {
-        width: 2.4rem;
-    }
-
-    .vote-icon {
-        font-size: 1.35rem;
-    }
-
-    .sideBar span {
-        font-size: 0.7rem;
-    }
 }
 
 .bigNum {
@@ -54,4 +44,41 @@
 
 .red {
     color: red;
+}
+
+
+/* Media queries */
+@media only screen and (max-width: 1300px) {
+    .sidebar-desktop {
+        width: 2.4rem;
+    }
+
+    .vote-icon {
+        font-size: 1.35rem;
+    }
+
+    #sidebar span {
+        font-size: 0.7rem;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .sidebar-desktop {
+        display: none;
+    }
+
+    .sidebar-mobile {
+        display: flex;
+        align-items: center;
+        gap: 0.2rem;
+        color: #353535;
+    }
+
+    .vote-icon {
+        font-size: 1.25rem;
+    }
+
+    .bigNum {
+        padding-left: 0.1rem;
+    }
 }

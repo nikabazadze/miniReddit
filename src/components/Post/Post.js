@@ -110,7 +110,7 @@ function Post({post, index}) {
 
     return (
         <div className="post">
-            <Sidebar score={post.score}/>
+            <Sidebar score={post.score} display="sidebar-desktop" />
             <div className="content-container">
                 <div className="content-header">
                     <span>{`Posted by u/${post.author} ${time}`}</span>
@@ -119,11 +119,12 @@ function Post({post, index}) {
                 <Content post={post} />
                 <div className="content-footer">
                     <div className="footer-icons-wrapper">
+                        <Sidebar score={post.score} display="sidebar-mobile" />
                         <div className="footer-icon-container comments-icon" onClick={toggleComments} >
                             <BiMessage className="footer-icon" />
                             <span>{shortNumber(post.num_comments, 1)} Comments</span>
                         </div>
-                        <div className="footer-icon-container" onClick={handleHideClick} >
+                        <div className="footer-icon-container hide-icon" onClick={handleHideClick} >
                             <BiHide className="footer-icon" />
                             <span>Hide Post</span>
                         </div>

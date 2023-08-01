@@ -20,6 +20,12 @@
     }
 }
 
+@media only screen and (max-width: 600px) {
+    #feed {
+        width: 100%;
+    }
+}
+
 .no-result {
     font-family: 'Roboto', sans-serif;
     font-size: 1.7rem;

@@ -139,3 +139,21 @@
         font-size: 0.85rem;
     }
 }
+
+
+@media only screen and (max-width: 600px) {
+    .content-container {
+        width: 100%;
+    }
+
+    .comments-icon {
+        position: absolute;
+        left: 5.4rem;
+    }
+}
+
+@media only screen and (max-width: 300px) {
+    .hide-icon span {
+        display: none;
+    }
+}
