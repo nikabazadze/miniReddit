@@ -5,7 +5,7 @@
     width: 100%;
     margin-bottom: 1rem;
     display: flex;
-    transition: width 0.15s ease-in-out;
+    transition: width 0.15s ease-in;
 }
 
 
@@ -105,8 +105,9 @@
     box-shadow: 0px 0px 2px #ff5112;
     color: #026aa7;
     font-size: 1.4rem;
+    text-align: center;
     height: 4.5rem;
-    margin: 2rem 8rem;
+    margin: 2rem 15%;
     display: flex;
     justify-content: center;
     align-items: center;
