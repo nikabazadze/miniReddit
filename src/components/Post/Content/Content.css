@@ -24,13 +24,15 @@
 }
 
 .video-container {
+    width: 100%;
     display: flex;
     justify-content: center;
     background-color: #000000;
 }
 
 .post-content video {
-    max-height: 35rem;
+    max-height: 100%;
+    width: auto;
     max-width: 100%;
     display: block;
 }
@@ -98,4 +100,8 @@
 .short-text p {
     display: inline;
     padding: 0;
+}
+
+.flex-content {
+    display: flex;
 }

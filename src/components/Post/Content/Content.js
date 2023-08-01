@@ -9,21 +9,10 @@ function Content({post}) {
     const [ linkClicked, setLinkClicked ] = useState(false);
     const [ showLongText, setShowLongText ] = useState(false);
 
-    function handleSeeMore() {
-        setShowLongText(true);
-        renderContent();
-    };
-
-    function renderLink() {
-        return (
-            <div>
-                <a href={post.url} target="_blank" rel="noopener noreferrer" onClick={() => setLinkClicked(true)}>
-                    {shortLink(post.url)}<BiLinkExternal className={`link-icon ${linkClicked && "icon-clicked"}`}/>
-                </a>
-            </div>
-        );
-    };
-
+    /**
+     * It renders post's content by checking several properties of the post object
+     * @returns post content
+     */
     function renderContent() {
         // Renders text content
         if (post.is_self) {
@@ -35,10 +24,12 @@ function Content({post}) {
                 return renderLink();
             }
 
-            if (text.length < 700 || showLongText) {
+            // If text is too long then render small text and show full text by clicking "see more" button
+            const smallLength = window.innerWidth > 480 ? 700 : 500;
+            if (text.length < smallLength || showLongText) {
                 return <p>{text}</p>;
             } else {
-                let shortText = text.slice(0, 700);
+                let shortText = text.slice(0, smallLength);
                 shortText += "...";
                 return (
                     <div className="short-text">
@@ -67,8 +58,30 @@ function Content({post}) {
         }
     };
 
+    /**
+     * Renders full long text
+     */
+    function handleSeeMore() {
+        setShowLongText(true);
+        renderContent();
+    };
+
+    /**
+     * Renders link content with external link icon
+     * @returns link content
+     */
+    function renderLink() {
+        return (
+            <div>
+                <a href={post.url} target="_blank" rel="noopener noreferrer" onClick={() => setLinkClicked(true)}>
+                    {shortLink(post.url)}<BiLinkExternal className={`link-icon ${linkClicked && "icon-clicked"}`}/>
+                </a>
+            </div>
+        );
+    };
+
     return (
-        <div className={`post-content ${showLongText && "full-text"}`}>
+        <div className={`post-content ${showLongText && "full-text"}  ${post.is_video && "flex-content"}`}>
             {renderContent()}
         </div>
     );

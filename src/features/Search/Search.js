@@ -12,11 +12,11 @@ function Search() {
     const inputRef = useRef(null);
 
     /**
-     * Handles click event for mobile phone screen.
+     * Handles click event for smaller screen.
      * When clicked on, search bar becomes wider to see input text clearly 
      */
     function handleClick() {
-        if (window.innerWidth < 411) {
+        if (window.innerWidth < 550) {
             inputRef.current.focus();   // When clicking search icon instead of input field, it does not give input field focus without this code
             widenSearch(true);
         }
@@ -27,7 +27,7 @@ function Search() {
      * @param {Object} e 
      */
     function handleBlur(e) {
-        if ((window.innerWidth < 411) && (e.target.offsetWidth > (window.innerWidth * 0.4))) {
+        if ((window.innerWidth < 550) && (e.target.offsetWidth > (window.innerWidth * 0.4))) {
             widenSearch(false);
         }
     }
