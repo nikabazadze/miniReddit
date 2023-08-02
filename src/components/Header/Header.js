@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import Tooltip from '@mui/material/Tooltip';
 
 import './Header.css';
 import logo from './logo.png';
@@ -35,16 +36,22 @@ function Header() {
             <div className="header-rightside-container">
                 <ul className="feeds-container">
                     <li onClick={() => dispatch(setChosenSubreddit(["/r/popular/", "feeds"]))}>
-                        <img 
-                            src={popularIcon} 
-                            alt="Popular feed icon" 
-                            className={`feed-icon ${chosenSubreddit[0] === "/r/popular/" ? 'chosen-feed-icon' : ''}`} />
+                        <Tooltip title="Popular" arrow >
+                            <img 
+                                src={popularIcon} 
+                                alt="Popular feed icon" 
+                                className={`feed-icon ${chosenSubreddit[0] === "/r/popular/" ? 'chosen-feed-icon' : ''}`} 
+                            />
+                        </Tooltip>
                     </li>
                     <li onClick={() => dispatch(setChosenSubreddit(["/r/all/", "feeds"]))}>
-                        <img 
-                            src={allIcon} 
-                            alt="All feed icon" 
-                            className={`feed-icon ${chosenSubreddit[0] === "/r/all/" ? 'chosen-feed-icon' : ''}`} />
+                        <Tooltip title="All" arrow >
+                            <img 
+                                src={allIcon} 
+                                alt="All feed icon" 
+                                className={`feed-icon ${chosenSubreddit[0] === "/r/all/" ? 'chosen-feed-icon' : ''}`} 
+                            />
+                        </Tooltip>
                     </li>
                 </ul>
                 <div className="header-cta-container">
