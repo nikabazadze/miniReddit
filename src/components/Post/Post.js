@@ -22,7 +22,7 @@ function Post({post, index}) {
     const dispatch = useDispatch();
 
     /**
-     * It hides or shows comments. On first click, it dispatches
+     * It hides or shows comments. On the first click, it dispatches
      * action to redux store to fetch the comments
      */
     function toggleComments() {
@@ -92,7 +92,7 @@ function Post({post, index}) {
 
     /**
      * Hides the post. Firstly, it tries to find the main "post" container and
-     * then shrinks it with transition (animation). Finally, removes it from view
+     * then shrinks it by reducing width along with transition. Finally, removes the post from view
      * @param {Object} event 
      */
     function handleHideClick({target}) {

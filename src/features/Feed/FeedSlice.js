@@ -2,11 +2,13 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { getSubredditPosts, getPostComments } from "../../API/redditAPI";
 import { selectSearchTerm } from "../Search/SearchSlice";
 
+// Fetches chosen subreddit's posts
 export const loadPosts = createAsyncThunk(
     'feed/loadPosts',
     getSubredditPosts
 );
 
+// Fetches specific post's comments
 export const loadPostComments = createAsyncThunk(
     'feed/loadPostComments',
     getPostComments
@@ -55,7 +57,17 @@ export const feedSlice = createSlice({
 });
 
 export const selectPosts = (state) => state.feed.posts;
+export const selectPostIsLoading = (state) => state.feed.postIsLoading;
+export const selectPostHasError = (state) => state.feed.postHasError;
+export const selectCommentIsLoading = (state) => state.feed.commentIsLoading;
+export const selectCommentHasError = (state) => state.feed.commentHasError;
 
+/**
+ * It filters posts by filtering post's titles with searchterm. Those posts
+ * are from "/all" subreddit which is mix of other subreddit's posts
+ * @param {Object} state 
+ * @returns Filtered posts
+ */
 export const selectFilteredPosts = (state) => {
     const searchTerm = selectSearchTerm(state);
     const posts = selectPosts(state);
@@ -64,10 +76,5 @@ export const selectFilteredPosts = (state) => {
     }
     return posts;
 };
-
-export const selectPostIsLoading = (state) => state.feed.postIsLoading;
-export const selectPostHasError = (state) => state.feed.postHasError;
-export const selectCommentIsLoading = (state) => state.feed.commentIsLoading;
-export const selectCommentHasError = (state) => state.feed.commentHasError;
 
 export default feedSlice.reducer;

@@ -10,10 +10,12 @@ import './JoinButton.css';
 function JoinButton({cta, placement, containerStyle}) {
     const [ open, setOpen ] = React.useState(false);
 
+    // Handles opening a dialog window when clicking on the cta button
     const handleClickOpen = () => {
       setOpen(true);
     };
   
+    // Handles closing a dialog window when clicking on the cta button
     const handleClose = () => {
       setOpen(false);
     };

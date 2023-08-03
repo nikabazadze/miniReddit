@@ -1,10 +1,13 @@
 #visited-subreddits {
-    margin-top: 1.5rem;
+    margin-top: 0.5rem;
 }
 
 .visited-subreddits-list {
-    max-height: 40vh;
-    overflow-y: auto;
+    /* max-height of the visited subreddits list = right column height(95vh - 4.5rem) - feeds height(118.8px)
+       - margin after feeds(0.5rem) - visited subreddits h3 height(43.2px) - join section height(233.6px)
+    */
+    max-height: calc(95vh - 4.5rem - 118.8px - 0.5rem - 43.2px - 233.6px);
+    overflow-y: scroll;
 }
 
 #visited-subreddits .subreddit {
@@ -14,4 +17,10 @@
 #visited-subreddits .subreddit p {
     padding-top: 0.2rem;
     padding-left: 0.3rem;
+}
+
+@media only screen and (max-height: 538px) {
+    #visited-subreddits {
+        display: none;
+    }
 }

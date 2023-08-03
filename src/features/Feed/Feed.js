@@ -35,7 +35,7 @@ function Feed() {
         }
     }, [searchTerm, dispatch]);
 
-    // If post is loading it returns two loading post skeletons
+    // If posts are loading it returns two loading post skeletons
     if (postIsLoading) {
         return (
             <div id="feed">

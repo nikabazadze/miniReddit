@@ -10,7 +10,8 @@ function Content({post}) {
     const [ showLongText, setShowLongText ] = useState(false);
 
     /**
-     * It renders post's content by checking several properties of the post object
+     * It renders post's content by checking several properties of 
+     * the post object to determine what type of content it has
      * @returns post content
      */
     function renderContent() {

@@ -16,10 +16,17 @@ function Subreddits() {
     const [ isLoading, hasError ] = [ useSelector(selectSubredditIsLoading), useSelector(selectSubredditHasError) ];
     const dispatch = useDispatch();
 
+    // Dispatches action to the redux store to fetch subreddits
     useEffect(() => {
         dispatch(loadSubreddits());
     }, [dispatch]);
 
+    /**
+     * Renders subreddits list. If the subreddits are loading, it renders loading skeletons.
+     * If there is an error while fetching subreddits, it renders error message.
+     * If successful fetch, it renders subreddits list.
+     * @returns Subreddits list
+     */
     function renderSubreddits() {
         if (isLoading) {
             return renderLoadingSubreddits();
@@ -50,6 +57,7 @@ function Subreddits() {
         );
     };
 
+    // Creates loading subreddits skeleton list
     function renderLoadingSubreddits() {
         const loadingSubreddits = [];
         for (let i = 0; i < 20; i++) {
@@ -72,7 +80,7 @@ function Subreddits() {
     };
 
     /**
-     * Sets chosen subreddit and if the viewport width is more than 1050px adds
+     * Sets chosen subreddit. If the viewport width is more than 1050px it adds
      * subreddit in the visitedSubreddit object, if it is not already added.
      * @param {Object} subreddit 
      */

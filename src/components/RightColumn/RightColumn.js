@@ -14,7 +14,7 @@ function RightColumn() {
         <div id="right-column">
             <Feeds />
             {visitedSubreddits.length > 0 && <VisitedSubreddits />}
-            <div className="join-section">
+            <div id="join-section" style={visitedSubreddits.length > 0 ? {marginTop: "0rem"} : {}}>
                 <p>Create an account to follow your favorite communities and start taking part in conversations.</p>
                 <JoinButton cta="Join MiniReddit" placement="right-column" />
             </div>
