@@ -16,6 +16,13 @@
     color: #fff;
 }
 
+.cta-container {
+    width: 5rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
 .right-column {
     font-size: 0.95rem;
     padding: 0.7rem 0;

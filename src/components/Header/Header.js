@@ -54,9 +54,7 @@ function Header() {
                         </Tooltip>
                     </li>
                 </ul>
-                <div className="header-cta-container">
-                    <JoinButton cta="Sign up" placement="header-cta" />
-                </div>
+                <JoinButton cta="Sign up" placement="header-cta" containerStyle="cta-container" />
             </div>
         </div>
     )

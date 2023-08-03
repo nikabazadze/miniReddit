@@ -98,13 +98,6 @@
     background-color: #e8e8e8;
 }
 
-.header-cta-container {
-    width: 5rem;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-}
-
 
 /* Media queries */
 @media only screen and (max-width: 1200px) {
@@ -130,12 +123,8 @@
     .feeds-container {
         display: none;
     }
-
-    .header-cta-container {
-        width: 5.5rem;
-    }
     
     .header-rightside-container {
-        left: calc(96.5% - 5.5rem);
+        left: calc(96.5% - 5rem);
     }
 }
