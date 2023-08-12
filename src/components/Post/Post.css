@@ -142,6 +142,10 @@
 
 
 @media only screen and (max-width: 600px) {
+    .post {
+        margin-bottom: 0.5rem;
+    }
+
     .content-container {
         width: 100%;
     }
