@@ -63,7 +63,7 @@ function Feed() {
     function renderLoadingPost() {
         return (
             <div className="post-skeleton-wrapper">
-                <Sidebar score={""} display="sidebar-desktop" />
+                <Sidebar score={-1} display="sidebar-desktop" />
                 <div className="post-skeletons">
                     <Skeleton className="author-skeleton" />
                     <Skeleton className="title-skeleton first" />

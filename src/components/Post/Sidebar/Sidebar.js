@@ -35,7 +35,10 @@ function Sidebar({score, display}) {
     return (
         <div className={display} id="sidebar" >
             <BiUpvote onClick={handleUpClick} className={`vote-icon upVote ${vote === 1 && "green"}`} />
-            <span className={`${vote === 1 && "green"} ${vote === -1 && "red"} ${score > 999 && "bigNum"}`}>{score !== "" ? shortNumber(score + vote, 1) : ""}</span>
+            <span className={`${vote === 1 && "green"} ${vote === -1 && "red"} 
+                              ${score === -1 && "clear-score"} ${score > 999 && "bigNum"}`}>
+                {score !== "" ? shortNumber(score + vote, 1) : ""}
+            </span>
             <BiDownvote onClick={handleDownClick} className={`vote-icon downVote ${vote === -1 && "red"}`}  />
         </div>
     )
