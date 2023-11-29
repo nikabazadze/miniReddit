@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css'
@@ -20,6 +20,7 @@ function Post({post, index}) {
     const [ showAllComments, setShowAllComments ] = useState(false);
     const time = moment.unix(post.created_utc).fromNow();
     const dispatch = useDispatch();
+    const postRef = useRef(null);
 
     /**
      * It hides or shows comments. On the first click, it dispatches
@@ -91,25 +92,18 @@ function Post({post, index}) {
     };
 
     /**
-     * Hides the post. Firstly, it tries to find the main "post" container and
-     * then shrinks it by reducing width along with transition. Finally, removes the post from view
+     * Hides the post with sliding-out effect.
      * @param {Object} event 
      */
-    function handleHideClick({target}) {
-        let element = target.parentElement.parentElement.parentElement.parentElement;
-        if (element.getAttribute("class") === "content-container") {
-            element = element.parentElement;
-        } else if (element.getAttribute("class") === "content-footer") {
-            element = element.parentElement.parentElement;
-        }
-        element.style.width = "40%"
+    function handleHideClick() {
+        postRef.current.style.width = "40%"
         setTimeout(() => {
-            element.style.display = "none";
+            postRef.current.style.display = "none";
         }, 150)
     }
 
     return (
-        <div className="post">
+        <div className="post" ref={postRef} >
             <Sidebar score={post.score} display="sidebar-desktop" />
             <div className="content-container">
                 <div className="content-header">
