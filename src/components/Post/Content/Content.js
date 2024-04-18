@@ -64,7 +64,7 @@ function Content({post}) {
      */
     function handleSeeMore() {
         setShowLongText(true);
-        renderContent();
+        // renderContent();
     };
 
     /**
