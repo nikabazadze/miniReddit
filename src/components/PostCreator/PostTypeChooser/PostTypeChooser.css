@@ -1,12 +1,10 @@
 .main-container {
-    /* border: 1px solid blue; */
     display: flex;
     width: 100%;
     height: 3rem;
 }
 
 .main-container > div {
-    /* border: 1px solid red; */
     border-right: 1px solid #d8d8d8;
     border-bottom: 1px solid #d8d8d8;
     width: 25%;
