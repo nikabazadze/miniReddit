@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
 import './PostTypeChooser.css';
-
 import postFilledIcon from '../icons/postFilled.png';
 import postOutlinedIcon from '../icons/postOutlined.png';
 import imageFilledIcon from '../icons/imageFilled.png';
@@ -11,9 +10,7 @@ import videoOutlinedIcon from '../icons/videoOutlined.png';
 import linkFilledIcon from '../icons/linkFilled.png';
 import linkOutlinedIcon from '../icons/linkOutlined.png';
 
-function PostTypeChooser() {
-    const [ contentType, setContentType ] = useState("post");
-
+function PostTypeChooser({ contentType, setContentType }) {
     return (
         <div className="main-container">
             <div onClick={() => setContentType("post")} className={(contentType === "post") && "chosen-type"}>
