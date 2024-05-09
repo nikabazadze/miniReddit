@@ -24,8 +24,8 @@ function PostTypeChooser({ contentType, setContentType }) {
     );
 
     const getIcon = postType => {
-        if (postType === "post") {
-            return contentType === "post" ? postFilledIcon : postOutlinedIcon;
+        if (postType === "text") {
+            return contentType === "text" ? postFilledIcon : postOutlinedIcon;
         } else if (postType === "image") {
             return contentType === "image" ? imageFilledIcon : imageOutlinedIcon;
         } else if (postType === "video") {
@@ -37,7 +37,7 @@ function PostTypeChooser({ contentType, setContentType }) {
 
     return (
         <div className="main-container">
-            {renderPostType("post")}
+            {renderPostType("text")}
             {renderPostType("image")}
             {renderPostType("video")}
             {renderPostType("link")}
