@@ -11,40 +11,36 @@ import linkFilledIcon from '../icons/linkFilled.png';
 import linkOutlinedIcon from '../icons/linkOutlined.png';
 
 function PostTypeChooser({ contentType, setContentType }) {
+
+    const renderPostType = postType => (
+        <div onClick={() => setContentType(postType)} className={(contentType === postType) && "chosen-type"}>
+            <img 
+                src={getIcon(postType)} 
+                alt="icon"
+                className="content-icon"
+            />
+            <span>{postType}</span>
+        </div>
+    );
+
+    const getIcon = postType => {
+        if (postType === "post") {
+            return contentType === "post" ? postFilledIcon : postOutlinedIcon;
+        } else if (postType === "image") {
+            return contentType === "image" ? imageFilledIcon : imageOutlinedIcon;
+        } else if (postType === "video") {
+            return contentType === "video" ? videoFilledIcon : videoOutlinedIcon;
+        } else if (postType === "link") {
+            return contentType === "link" ? linkFilledIcon : linkOutlinedIcon;
+        };
+    };
+
     return (
         <div className="main-container">
-            <div onClick={() => setContentType("post")} className={(contentType === "post") && "chosen-type"}>
-                <img 
-                    src={contentType === "post" ? postFilledIcon : postOutlinedIcon} 
-                    alt="icon"
-                    className="content-icon"
-                />
-                <span>post</span>
-            </div>
-            <div onClick={() => setContentType("image")} className={contentType === "image" && "chosen-type"}>
-                <img 
-                    src={contentType === "image" ? imageFilledIcon : imageOutlinedIcon} 
-                    alt="icon"
-                    className="content-icon"
-                />
-                <span>image</span>
-            </div>
-            <div onClick={() => setContentType("video")} className={contentType === "video" && "chosen-type"}>
-                <img 
-                    src={contentType === "video" ? videoFilledIcon : videoOutlinedIcon} 
-                    alt="icon"
-                    className="content-icon"
-                />
-                <span>video</span>
-            </div>
-            <div onClick={() => setContentType("link")} className={contentType === "link" && "chosen-type"}>
-                <img 
-                    src={contentType === "link" ? linkFilledIcon : linkOutlinedIcon} 
-                    alt="icon"
-                    className="content-icon"
-                />
-                <span>link</span>
-            </div>
+            {renderPostType("post")}
+            {renderPostType("image")}
+            {renderPostType("video")}
+            {renderPostType("link")}
         </div>
     )
 }
