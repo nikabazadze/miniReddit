@@ -12,7 +12,7 @@
     min-height: 6rem;
     padding: 0.75rem 1rem;
     border: 1px solid #d8d8d8;
-    border-radius: 0.25rem;
+    border-radius: var(--border-radius-input);
     outline: none;
     color: #454545;
 }
@@ -35,7 +35,7 @@
     height: 3rem;
     padding: 0 1rem;
     border: 1px solid #d8d8d8;
-    border-radius: 0.25rem;
+    border-radius: var(--border-radius-input);
     outline: none;
     color: #454545;
 }
