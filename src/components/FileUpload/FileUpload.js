@@ -3,7 +3,7 @@ import AWS from 'aws-sdk';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css'
 import './FileUpload.css';
-import uploadIcon from '../../icons/uploadIcon.png';
+import uploadIcon from './uploadIcon.png';
 
 AWS.config.update({
     accessKeyId: process.env.REACT_APP_AWS_ACCESS_KEY_ID,
