@@ -23,7 +23,9 @@ export const feedSlice = createSlice({
         commentIsLoading: false,
         commentHasError: false
     },
-    reducers: {},
+    reducers: {
+        addPost: (state, action) => {state.posts.unshift(action.payload)},
+    },
     extraReducers: {
         [loadPosts.pending]: (state, action) => {
             state.postIsLoading = true;
@@ -55,6 +57,8 @@ export const feedSlice = createSlice({
         }
     }
 });
+
+export const { addPost } = feedSlice.actions;
 
 export const selectPosts = (state) => state.feed.posts;
 export const selectPostIsLoading = (state) => state.feed.postIsLoading;
