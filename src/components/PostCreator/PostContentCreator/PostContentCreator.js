@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import './PostContentCreator.css';
 import FileUpload from "../../FileUpload/FileUpload";
 
-function PostContentCreator({ contentType, setContent }) {
+function PostContentCreator({ contentType, setContent, clearContent }) {
     const [ text, setText ] = useState("");
     const [ link, setLink ] = useState("");
     const [ fileUrl, setFileUrl ] = useState(null);
@@ -12,7 +12,7 @@ function PostContentCreator({ contentType, setContent }) {
         setText("");
         setLink("");
         setFileUrl(null);
-    }, [contentType]);
+    }, [contentType, clearContent]);
 
     useEffect(() => {
         const content = text ? text : link ? link : fileUrl;
