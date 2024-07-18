@@ -78,15 +78,6 @@ function FileUpload({ fileUrl, setFileUrl, contentType }) {
         handleFileUpload(e.dataTransfer);
     };
 
-    const handleImgOrientation = () => {
-        if (imageRef.current) {
-            const imgWidth = imageRef.current.width;
-            const imgHeight = imageRef.current.height;
-
-            if (imgWidth > imgHeight) setIsLandscape(true);
-        };
-    };
-
     const renderLoadingSkeleton = () => {
         return (
             <div className="upload-skeleton-container">
@@ -118,7 +109,7 @@ function FileUpload({ fileUrl, setFileUrl, contentType }) {
                         ref={imageRef} 
                         style={isLandscape ? {maxWidth: "100%", height: "auto"} : {}}
                         onLoad={() => {
-                            handleImgOrientation();
+                            setIsLandscape(imageRef.current.width > imageRef.current.height);
                             setLoading(false);
                         }}
                     />
