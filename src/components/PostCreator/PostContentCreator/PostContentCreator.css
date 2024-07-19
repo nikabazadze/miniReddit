@@ -3,6 +3,12 @@
     margin: 1.25rem auto;
 }
 
+@media only screen and (max-width: 600px) {
+    .content-creator {
+        margin: 1rem auto;
+    }
+}
+
 /* Text content styles */
 
 .content-creator textarea {

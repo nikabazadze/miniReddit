@@ -30,3 +30,9 @@
     top: 0.85rem;
     right: 1rem;
 }
+
+@media only screen and (max-width: 600px) {
+    .title-container {
+        margin: 1rem auto;
+    }
+}
