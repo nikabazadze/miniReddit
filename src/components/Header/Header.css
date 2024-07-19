@@ -48,7 +48,7 @@
 }
 
 .highlight {
-    color: #026aa7;
+    color: var(--color-brand-blue);
 }
 
 

@@ -1,3 +1,8 @@
+:root {
+    --color-brand-blue: #026aa7;
+    --color-brand-orange: #ff6112;
+}
+
 html,
 body {
     font-size: 16px;
