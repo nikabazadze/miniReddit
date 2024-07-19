@@ -13,7 +13,7 @@ import linkOutlinedIcon from '../icons/linkOutlined.png';
 function PostTypeChooser({ contentType, setContentType }) {
 
     const renderPostType = postType => (
-        <div onClick={() => setContentType(postType)} className={(contentType === postType) && "chosen-type"}>
+        <div onClick={() => setContentType(postType)} className={(contentType === postType) ? "chosen-type" : ""}>
             <img 
                 src={getIcon(postType)} 
                 alt="icon"
