@@ -1,7 +1,7 @@
 #feed {
     width: 50%;
     max-width: 50rem;
-    margin: 4.5rem auto;
+    margin: 1rem auto;
 }
 
 @media only screen and (max-width: 1050px) {
@@ -16,14 +16,13 @@
     #feed {
         width: 93%;
         min-width: 15rem;
-        margin: 4.5rem auto;
+        margin: 1rem auto;
     }
 }
 
 @media only screen and (max-width: 600px) {
     #feed {
         width: 100%;
-        margin: 3.5rem auto;
     }
 }
 
