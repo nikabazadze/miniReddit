@@ -98,6 +98,7 @@ function FileUpload({ fileUrl, setFileUrl, contentType }) {
                 type="file" 
                 id="input-file"
                 ref={inputRef}
+                accept={(contentType === "image") ? "image/*" : "video/*"}
                 onChange={(e) => handleFileUpload(e.target)}
                 hidden
             />
