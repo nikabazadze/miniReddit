@@ -26,6 +26,7 @@ function PostCreator() {
         const unixTimestamp = Math.floor(date.getTime() / 1000);
 
         const post = {
+            id: Math.floor(Math.random() * 100000),
             score: 0,
             author: "GuestUser",
             created_utc: unixTimestamp,
