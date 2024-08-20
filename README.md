@@ -12,7 +12,7 @@ MiniReddit is a front-end clone of the popular social media site Reddit. It was 
 - **Responsive Design:** Adapts to various screen sizes for optimal user experience.
 - **Search Functionality:** Filter posts based on titles.
 - **Interactive Elements:** Upvote/downvote posts, expand post content, and hide posts.
-- **User Post Creation**: Users can now create posts using text, image, or video content, a feature that was initially planned as a future improvement and has been successfully implemented.. Although these posts are not saved permanently (they will be lost after a page refresh), implementing this feature was a challenging and valuable learning experience. Media files are uploaded using AWS S3 bucket and pre-signed URLs, providing a practical introduction to handling file uploads in web applications. This feature enhances the interactive experience of the application and demonstrates the ability to integrate and utilize additional technologies.
+- **User Post Creation**: Users can now create posts using text, image, or video content, a feature that was initially planned as a future improvement and has been successfully implemented. Although these posts are not saved permanently (they will be lost after a page refresh), implementing this feature was a challenging and valuable learning experience. Media files are uploaded using AWS S3 bucket and pre-signed URLs, providing a practical introduction to handling file uploads in web applications. This feature enhances the interactive experience of the application and demonstrates the ability to integrate and utilize additional technologies.
 
 ## Live Demo
 Visit the live version of MiniReddit [here](https://minireddit-app.netlify.app/).
