@@ -12,6 +12,7 @@ MiniReddit is a front-end clone of the popular social media site Reddit. It was 
 - **Responsive Design:** Adapts to various screen sizes for optimal user experience.
 - **Search Functionality:** Filter posts based on titles.
 - **Interactive Elements:** Upvote/downvote posts, expand post content, and hide posts.
+- **User Post Creation**: Users can now create posts using text, image, or video content, a feature that was initially planned as a future improvement and has been successfully implemented.. Although these posts are not saved permanently (they will be lost after a page refresh), implementing this feature was a challenging and valuable learning experience. Media files are uploaded using AWS S3 bucket and pre-signed URLs, providing a practical introduction to handling file uploads in web applications. This feature enhances the interactive experience of the application and demonstrates the ability to integrate and utilize additional technologies.
 
 ## Live Demo
 Visit the live version of MiniReddit [here](https://minireddit-app.netlify.app/).
@@ -72,7 +73,7 @@ While MiniReddit has reached a significant milestone in its current state, the j
 
 3. **Extended Post Feed:** Currently limited to 25 posts per category or subreddit due to API constraints, the feed could be enhanced by fetching additional posts from various subreddits after the initial set. This would create a more diverse and engaging browsing experience.
 
-4. **User Post Creation:** Despite being a front-end-only project, enabling users to create posts (text, images, videos) would add an interactive dimension to MiniReddit. While these posts would not be permanent, this feature would not only challenge my development skills but also enrich the overall user experience.
+4. ~~User Post Creation~~: Implemented as of 07/19/2024.
 
 These improvements aim to not only enhance user engagement and interaction but also to push the boundaries of my front-end development skills, exploring new technologies and methodologies in the process.
 
